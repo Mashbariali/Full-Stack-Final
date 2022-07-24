@@ -35,3 +35,11 @@ html {
   height: 100%;
 }
 
+.carousel{
+  opacity: 0.3;
+}
+
+.MyNav {
+
+  background-color: transparent !important;
+}
