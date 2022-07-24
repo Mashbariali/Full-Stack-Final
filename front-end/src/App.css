@@ -43,3 +43,11 @@ html {
 
   background-color: transparent !important;
 }
+
+
+
+
+
+.scrollarea {
+  min-height: 500px;
+}
