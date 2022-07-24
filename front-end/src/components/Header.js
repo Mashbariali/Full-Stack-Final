@@ -26,7 +26,12 @@ function Header() {
             <Nav.Link href="/" className='me-2'>الصفحة الرئيسية</Nav.Link>
             <Nav.Link href="/" className='me-2'>اضافة طلب توصيل</Nav.Link>
             <Nav.Link href="/" className='me-2'>استعراض الطلبات</Nav.Link>
+            <Nav.Link href="/join" className='me-2'>الأنضمام</Nav.Link>
 
+
+
+              <Button className='userbuttom me-3' a href='/register' variant="outline-info" >تسجيل </Button>
+              <Button className='userbuttom me-3' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
               <Button className='userbuttom' a href='/' variant="outline-danger" >تسجيل الخروج</Button>
 
           </Nav>
