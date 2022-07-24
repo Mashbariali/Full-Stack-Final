@@ -5,8 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import 'animate.css';
-import 'mdb-react-ui-kit/dist/css/mdb.rtl.min.css'
-// import 'bootstrap/dist/css/bootstrap.rtl.min.css';
+// import 'mdb-react-ui-kit/dist/css/mdb.rtl.min.css'
+import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -8,7 +8,7 @@ import {
 
 export default function Carousel() {
   return (
-    <MDBCarousel>
+    <MDBCarousel className='carousel'>
       <MDBCarouselInner>
         <MDBCarouselItem className='active'>
           <MDBCarouselElement src='https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif' alt='...' />
