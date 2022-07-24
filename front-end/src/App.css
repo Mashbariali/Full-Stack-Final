@@ -38,3 +38,8 @@ html {
 .carousel{
   opacity: 0.3;
 }
+
+.MyNav {
+
+  background-color: transparent !important;
+}

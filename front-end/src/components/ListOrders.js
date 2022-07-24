@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, Row , Col , Button} from 'react-bootstrap';
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup } from 'mdb-react-ui-kit';
 function ListOrders() {
-  return (<div className=' col d-flex justify-content-center ' >
+  return (<div className=' col d-flex justify-content-center'>
 
   <Row className=' mt-5 text-center '>
     <Col >
@@ -14,12 +14,11 @@ function ListOrders() {
     <Card.Text className='cardtext mt-5'>
       
           </Card.Text >
-    <Button variant="dark" a href=''>استمرار</Button>
+    <Button variant="dark" a href=''>طلب</Button>
   </Card.Body>
 </Card>
 </Col> 
-
-  </Row>
+</Row>
 
 </div>
   )

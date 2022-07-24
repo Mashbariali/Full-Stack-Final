@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" className='sticky-top'>
+      <Navbar bg="" variant="dark" className='MyNav sticky-top bg-transparent'>
         <Container>
           <Navbar.Brand className='' >
             <img 
@@ -31,7 +31,7 @@ function Header() {
                <Button className='userbuttom me-3' a href='/register' variant="outline-info" >تسجيل </Button>
               <Button className='userbuttom me-3' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
               <Button className='userbuttom' a href='/' variant="outline-danger" >تسجيل الخروج</Button>
-\         </Nav>
+       </Nav>
         </Container>
       </Navbar>
 
