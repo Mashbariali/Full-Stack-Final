@@ -78,8 +78,12 @@ def delete_Delegate(request: Request, Delegate_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
-    newDelegate.delete()
-    return Response({"msg": "DELETE Delegate Successfully"})
+    if request.user == newDelegate.user:
+     newDelegate.delete()
+     return Response({"msg": "DELETE Delegate Successfully"})
+    else:
+
+     return Response({"msg": "bad request, cannot delete other Delegate "}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 # @api_view(['GET'])
@@ -130,7 +134,7 @@ def list_Orders(request: Request):
     order = Order.objects.all()
     dataResponse = {
         "msg": "New Order Add",
-        "Order": OrderSerializer(instance=newDelegate, many=True).data
+        "Order": OrderSerializer(instance=order, many=True).data
     }
     return Response(dataResponse)
 
@@ -164,8 +168,13 @@ def delete_Order(request: Request, Order_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     order = Order.objects.get(id=Order_id)
-    order.delete()
-    return Response({"msg": "Delete Order Successfully"})
+    if request.user == order.user:
+        order.delete()
+        return Response({"msg": "Delete Order Successfully"})
+    else:
+
+     return Response({"msg": "bad request, cannot delete other order "}, status=status.HTTP_401_UNAUTHORIZED)
+    
 
 
 
@@ -195,8 +204,13 @@ def delete_AppRating(request: Request, AppRating_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     appRating = AppRating.objects.get(id=AppRating_id)
-    appRating.delete()
-    return Response({"msg": "Delete Rating Successfully"})
+    if request.user == appRating.user:
+        appRating.delete()
+        return Response({"msg": "Delete Rating Successfully"})
+    else:
+
+     return Response({"msg": "bad request, cannot delete other Rating "}, status=status.HTTP_401_UNAUTHORIZED)
+    
 
 
 # ADD and Delete new DelegateRating.
@@ -212,7 +226,7 @@ def add_DelegateRating(request: Request):
         delegateRating.save()
         dataResponse = {
             "msg": "Thank you for record this form...",
-            "Rating": appRating.data
+            "Rating": delegateRating.data
         }
         return Response(dataResponse)
     else:
@@ -225,8 +239,13 @@ def delete_DelegateRating(request: Request, DelegateRating_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     delegateRating = DelegateRating.objects.get(id=DelegateRating_id)
-    delegateRating.delete()
-    return Response({"msg": "Delete Rating Successfully"})
+    if request.user == delegateRating.user:
+            delegateRating.delete()
+            return Response({"msg": "Delete Rating Successfully"})
+    else:
+
+     return Response({"msg": "bad request, cannot delete other Rating "}, status=status.HTTP_401_UNAUTHORIZED)
+    
 
 
 
