@@ -4,20 +4,20 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
-from .models import NewDelegate,Order,AppRating,ProfileRating
+from .models import NewDelegate,Order,AppRating,DelegateRating
 from rest_framework.permissions import IsAdminUser
 
-from .serializers import NewDelegateSerializer,OrderSerializer,AppRatingSerializer,ProfileRatingSerializer
+from .serializers import NewDelegateSerializer,OrderSerializer,AppRatingSerializer,DelegateRatingSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
-# ADD, View, Update, and Delete new Vulnerabilities by the Scanner.
+# ADD, View, Update, and Delete new Delegate.
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-def add_NewDelegate(request: Request):
-    if not request.user.is_authenticated or not request.user.has_perm('SecurityApp.add_scan_vul'):
-        return Response({"msg": "Sorry, Not Allowed to add vulnerabilities ..."}, status=status.HTTP_401_UNAUTHORIZED)
+#@permission_classes([IsAuthenticated])
+def add_Delegate(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
+        return Response({"msg": "Sorry, Not Allowed to add New Delegate ..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     NewDelegate = NewDelegateSerializer(data=request.data)
     if NewDelegate.is_valid():
@@ -36,24 +36,24 @@ def add_NewDelegate(request: Request):
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAdminUser])
-def list_NewDelegate(request: Request):
+def list_Delegate(request: Request):
     if not request.user.is_authenticated or not request.user.has_perm('DeliveryApp.list_NewDelegate'):
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
     request.data.update(user=request.user.id)
 
     newDelegate = NewDelegate.objects.all()
     dataResponse = {
-        "msg": "New vulnerabilities in the world",
-        "Vulnerabilities": NewDelegateSerializer(instance=newDelegate, many=True).data
+        "msg": "New Delegate in the world",
+        "Delegate": NewDelegateSerializer(instance=newDelegate, many=True).data
     }
     return Response(dataResponse)
 
 
 @api_view(['PUT'])
 @authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-def update_NewDelegate(request: Request, Delegate_id):
-    if not request.user.is_authenticated or not request.user.has_perm('SecurityApp.change_scan_vul'):
+#@permission_classes([IsAuthenticated])
+def update_Delegate(request: Request, Delegate_id):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.change_scan_vul'):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
 
@@ -72,9 +72,9 @@ def update_NewDelegate(request: Request, Delegate_id):
 
 @api_view(["DELETE"])
 @authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-def delete_NewDelegate(request: Request, Delegate_id):
-    if not request.user.is_authenticated or not request.user.has_perm('SecurityApp.delete_scan_vul'):
+#@permission_classes([IsAuthenticated])
+def delete_Delegate(request: Request, Delegate_id):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.delete_scan_vul'):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
@@ -96,3 +96,137 @@ def delete_NewDelegate(request: Request, Delegate_id):
 #     }
 #
 #     return Response(dataResponse)
+
+# ADD, View, Update, and Delete new Order.
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def add_Order(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
+        return Response({"msg": "Sorry, Not Allowed to add New Order ..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    order = OrderSerializer(data=request.data)
+    if order.is_valid():
+        order.save()
+        dataResponse = {
+            "msg": "Thank you for record this form...",
+            "Order": order.data
+        }
+        return Response(dataResponse)
+    else:
+        print(order.errors)
+        dataResponse = {"msg": "Sorry, couldn't add new Order..."}
+        return Response(dataResponse, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAdminUser])
+def list_Orders(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('DeliveryApp.list_NewDelegate'):
+        return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
+    request.data.update(user=request.user.id)
+
+    order = Order.objects.all()
+    dataResponse = {
+        "msg": "New Order Add",
+        "Order": OrderSerializer(instance=newDelegate, many=True).data
+    }
+    return Response(dataResponse)
+
+
+@api_view(['PUT'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def update_Order(request: Request, Order_id):
+    if not request.user.is_authenticated:#or not request.user.has_perm('SecurityApp.change_scan_vul'):
+        return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
+    order = Order.objects.get(id=Order_id)
+
+    update_order = OrderSerializer(instance=order, data=request.data)
+    if update_order.is_valid():
+        update_order.save()
+        responseData = {
+            "msg": "updated Order successefully"
+        }
+
+        return Response(responseData)
+    else:
+        print(update_order.errors)
+        return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(["DELETE"])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def delete_Order(request: Request, Order_id):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.delete_scan_vul'):
+        return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    order = Order.objects.get(id=Order_id)
+    order.delete()
+    return Response({"msg": "Delete Order Successfully"})
+
+
+
+# ADD and Delete new AppRating.
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def add_AppRating(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
+        return Response({"msg": "Sorry, Not Allowed to add New Rating ..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    appRating = AppRatingSerializer(data=request.data)
+    if appRating.is_valid():
+        appRating.save()
+        dataResponse = {
+            "msg": "Thank you for record this form...",
+            "Rating": appRating.data
+        }
+        return Response(dataResponse)
+    else:
+        print(appRating.errors)
+        dataResponse = {"msg": "Sorry, couldn't add new Rating..."}
+        return Response(dataResponse, status=status.HTTP_400_BAD_REQUEST)
+
+def delete_AppRating(request: Request, AppRating_id):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.delete_scan_vul'):
+        return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    appRating = AppRating.objects.get(id=AppRating_id)
+    appRating.delete()
+    return Response({"msg": "Delete Rating Successfully"})
+
+
+# ADD and Delete new DelegateRating.
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def add_DelegateRating(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
+        return Response({"msg": "Sorry, Not Allowed to add New Rating ..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    delegateRating = DelegateRatingSerializer(data=request.data)
+    if delegateRating.is_valid():
+        delegateRating.save()
+        dataResponse = {
+            "msg": "Thank you for record this form...",
+            "Rating": appRating.data
+        }
+        return Response(dataResponse)
+    else:
+        print(delegateRating.errors)
+        dataResponse = {"msg": "Sorry, couldn't add new Rating..."}
+        return Response(dataResponse, status=status.HTTP_400_BAD_REQUEST)
+
+def delete_DelegateRating(request: Request, DelegateRating_id):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.delete_scan_vul'):
+        return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    delegateRating = DelegateRating.objects.get(id=DelegateRating_id)
+    delegateRating.delete()
+    return Response({"msg": "Delete Rating Successfully"})
+
+
+

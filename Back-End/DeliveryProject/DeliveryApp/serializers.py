@@ -1,6 +1,6 @@
 from dataclasses import field
 from rest_framework import serializers
-from .models import NewDelegate,Order,AppRating,ProfileRating
+from .models import NewDelegate,Order,AppRating,DelegateRating
 
 
 """
@@ -28,7 +28,7 @@ class AppRatingSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProfileRatingSerializer(serializers.ModelSerializer):
+class DelegateRatingSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProfileRating
+        model = DelegateRating
         fields = '__all__'

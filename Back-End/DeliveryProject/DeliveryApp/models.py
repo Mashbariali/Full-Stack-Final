@@ -68,7 +68,7 @@ class AppRating(models.Model):
     rate = models.CharField(max_length=250, choices=RATE_CHOICES)
 
 
-class ProfileRating(models.Model):
+class DelegateRating(models.Model):
     RATE_CHOICES = (
         ("4", "excellent"),
         ("3 ", "very good"),
