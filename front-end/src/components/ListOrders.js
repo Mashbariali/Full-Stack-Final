@@ -6,4 +6,4 @@ function ListOrders() {
   )
 }
 
-export default Orders
+export default ListOrders
