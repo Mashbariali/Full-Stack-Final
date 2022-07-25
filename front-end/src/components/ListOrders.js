@@ -1,27 +1,57 @@
 import React from 'react'
+import axios from 'axios'
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+
 import {Card, Row , Col , Button} from 'react-bootstrap';
-import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup } from 'mdb-react-ui-kit';
+// import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup } from 'mdb-react-ui-kit';
+import {useEffect, useState} from 'react'
 function ListOrders() {
-  return (<div className=' col d-flex justify-content-center ' >
 
-  <Row className=' mt-5 text-center '>
-    <Col >
+  const [orders,setOrders] = useState([]);
 
-    <Card style={{ width: '16rem' }} className='mx-5 mt-5 bootstrapcard animateanimated animatezoomIn '>
-  <Card.Img variant="top" src="" className=''/>
-  <Card.Body>
-    <Card.Title className='cardtitle'></Card.Title>
-    <Card.Text className='cardtext mt-5'>
-      
-          </Card.Text >
-    <Button variant="dark" a href=''>استمرار</Button>
-  </Card.Body>
-</Card>
-</Col> 
 
-  </Row>
+  useEffect(()=>{
+    //here your will be fetch all orders fro the data in  endPoint.
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((e)=>{
+      setOrders(e.data)
+    })
+  })
+  return (
+  // 
+  orders.map((e)=>(
+    // <li>{e.title}</li>
+    <div className=' col d-flex justify-content-center'>
+    
+    <MDBRow>
+      <MDBCol sm='6'>
+        <MDBCard>
+          <MDBCardBody>
+            <MDBCardTitle>{e.title}</MDBCardTitle>
+            <MDBCardText>
+              With supporting text below as a natural lead-in to additional content.
+            </MDBCardText>
+            <MDBBtn href='#'>Go somewhere</MDBBtn>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+      <MDBCol sm='6'>
+        <MDBCard>
+          <MDBCardBody>
+            <MDBCardTitle>Special title treatment</MDBCardTitle>
+            <MDBCardText>
+              With supporting text below as a natural lead-in to additional content.
+            </MDBCardText>
+            <MDBBtn href='#'>Go somewhere</MDBBtn>
+          </MDBCardBody>
+        </MDBCard>
+      </MDBCol>
+    </MDBRow>
+  </div>
+  ))
 
-</div>
+  // 
+  
+ 
   )
 }
 

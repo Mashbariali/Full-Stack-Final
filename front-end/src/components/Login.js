@@ -23,6 +23,7 @@ function Login() {
         <button className="btn btn-primary mt-2" onClick={loginUser}>تسجيل الدخول</button>
 
     </div>
+    <a href='/register'>إنشاء حساب ؟ </a>
     </div>
   )
 }
