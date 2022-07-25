@@ -4,9 +4,9 @@ import axios from 'axios'
 import AlertPasswordMatch from './AlertPasswordMatch'
 
 function Register() {
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [userName, setUserName] = useState("")
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [username, setUserName] = useState("")
   const [password, setPassword] = useState("")
   const [rePassword, setRePassword] = useState("")
   const [email, setEmail] = useState("")
@@ -32,14 +32,31 @@ const checkMatchPassword = (e) =>{
 
 
 
-const RegisterUser=() =>{
-  axios.post ('API login', {
-      firstName, lastName, userName, password, email
-  }).then(res=>{
-      navigate("/")
-  })
+// const RegisterUser=() =>{
+//   axios.post ('http://127.0.0.1:8000/Users/register', {
+//     body: JSON.stringify({
+//       first_name, last_name, username, password, email
+//   })
+    
+//   }).then(res=>{
+//       navigate("/")
+//   })
 
-}
+
+const RegisterUser = () => {
+  axios
+    .post(`http://127.0.0.1:8000/Users/register`, {
+       first_name, last_name, username, password, email
+      
+    })
+    .then((res) => {
+      console.log(res);
+      console.log(first_name, last_name, username, password, email)
+      navigate("/");
+    })
+ 
+  }
+
 
   return (
     <div className='container d-flex justify-content-center align-items-center'>

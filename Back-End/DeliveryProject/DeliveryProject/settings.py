@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
     'DeliveryApp',
     'Users',
     'corsheaders',
-    'Chat',
+   'Chat',
     'rest_framework',
 
 ]
@@ -50,10 +51,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'DeliveryProject.urls'
@@ -135,6 +137,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=50),
 }
-
-
-CROS_ORIGIN_ALL = True
+CORS_ORIGIN_WHITELIST = []
+CORS_ALLOW_ALL_ORIGINS = True
