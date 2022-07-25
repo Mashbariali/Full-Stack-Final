@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Register from './components/Register';
 import Chat from './components/Chat'
 import Chatt from './components/Chatt'
+import AddOrder from './components/AddOrder';
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
             <Route path='/Chat'                   element={< Chat />}></Route>
             {/* <Route path='/orders'              element={< Orders />}></Route> */}
             <Route path='/Chatt'                   element={< Chatt />}></Route>
+            <Route path='/addOrder'                   element={< AddOrder />}></Route>
+
             </Route>
         </Routes>
         < Footer />

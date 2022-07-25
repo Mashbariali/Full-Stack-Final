@@ -26,7 +26,7 @@ function Header() {
             </Navbar.Brand>
           <Nav className="me-auto ">
           <Nav.Link><Link to="/"className='me-2'>الصفحة الرئيسية</Link></Nav.Link>
-          <Nav.Link><Link to="/"className='me-2'>اضافة طلب توصيل</Link></Nav.Link>
+          <Nav.Link><Link to="/addOrder"className='me-2'>اضافة طلب توصيل</Link></Nav.Link>
           <Nav.Link><Link to="/list-orders"className='me-2'>استعراض الطلبات</Link></Nav.Link>
           <Nav.Link><Link to="/join"className='me-2'>الانضمام</Link></Nav.Link>
                {/* <Button className='userbuttom me-3 log1' a href='/register' variant="outline-info" >تسجيل </Button> */}

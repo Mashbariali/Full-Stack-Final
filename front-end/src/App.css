@@ -230,10 +230,10 @@ html {
     left: 130px;
   }
 
-
-
-
-
 .scrollarea {
   min-height: 500px;
+}
+.card_order{
+    margin: 8px;
+    color:rgb(13, 19, 19)
 }

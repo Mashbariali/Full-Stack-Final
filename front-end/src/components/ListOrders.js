@@ -20,32 +20,19 @@ function ListOrders() {
   // 
   orders.map((e)=>(
     // <li>{e.title}</li>
-    <div className=' col d-flex justify-content-center'>
+    <div className=' col d-flex justify-content-center card_order'>
     
-    <MDBRow>
-      <MDBCol sm='6'>
-        <MDBCard>
-          <MDBCardBody>
-            <MDBCardTitle>{e.title}</MDBCardTitle>
-            <MDBCardText>
-              With supporting text below as a natural lead-in to additional content.
-            </MDBCardText>
-            <MDBBtn href='#'>Go somewhere</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol sm='6'>
-        <MDBCard>
-          <MDBCardBody>
-            <MDBCardTitle>Special title treatment</MDBCardTitle>
-            <MDBCardText>
-              With supporting text below as a natural lead-in to additional content.
-            </MDBCardText>
-            <MDBBtn href='#'>Go somewhere</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
+    <Card className="text-center">
+      <Card.Header>Featured</Card.Header>
+      <Card.Body>
+        <Card.Title>{e.id}</Card.Title>
+        <Card.Text>
+          With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button variant="primary" href='/chatt'>Accept</Button>
+      </Card.Body>
+      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    </Card>
   </div>
   ))
 
