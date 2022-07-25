@@ -46,7 +46,6 @@ const join=() =>{
         <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setCarImage(e.target.value);}}></input>
         <label >رخصة القيادة</label>
         <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
-         <img src={image} />
         <button className="btn btn-primary mt-3" onClick={join} >طلب الانضمام!</button>
       </div>
     </div>
