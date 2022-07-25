@@ -17,6 +17,7 @@ class NewDelegateSerializer(serializers.ModelSerializer):
 
 
 
+
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
