@@ -13,15 +13,6 @@ function Join() {
     const navigate = useNavigate("")
 
 
-    
-    const attachedImage = (e) => {
-        setImage(URL.createObjectURL(e.target.files[0]))
-        console.log(e)
-  
-      };
-
-      
-
 
 const join=() =>{
   axios.post ('API login', {
@@ -41,15 +32,22 @@ const join=() =>{
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">نموذج الانضمام الى فريق التوصيل</h1>
         <h3 className="text-center py-5 mc-5 ">طلبات الانضمام يتم مراجعتها والموافقة عليها خلال 24 ساعة عمل</h3>
-        <input className="form-control mt-3 mb-2" type="text" placeholder='الاسم'  onChange={(e)=> {setName(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="text" placeholder='رقم الجوال' onChange={(e)=> {setPhoneNumber(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="text" placeholder='رقم الهوية الوطنية' onChange={(e)=> {setIdNumber(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="file" placeholder='صورة شخصية' onChange={(e)=> {setPersonImage(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="text" placeholder='رقم اللوحة' onChange={(e)=> {setCarInfo(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="file" placeholder='صورة السيارة'onChange={(e)=> {setCarImage(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="file" placeholder='رخصة قياده' onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
+        <label >الاسم</label>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setName(e.target.value);}}></input>
+        <label >رقم الجوال</label>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setPhoneNumber(e.target.value);}}></input>
+        <label >رقم الهوية الوطنية</label>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setIdNumber(e.target.value);}}></input>
+        <label >صورة شخصية</label>
+        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setPersonImage(e.target.value);}}></input>
+        <label >رقم لوحة المركبة</label>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setCarInfo(e.target.value);}}></input>
+        <label >صورة المركبة</label>
+        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setCarImage(e.target.value);}}></input>
+        <label >رخصة القيادة</label>
+        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
          <img src={image} />
-        <button className="btn btn-primary mt-2" onClick={join} >طلب الانضمام!</button>
+        <button className="btn btn-primary mt-3" onClick={join} >طلب الانضمام!</button>
       </div>
     </div>
   )
