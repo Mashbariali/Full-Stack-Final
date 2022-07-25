@@ -14,7 +14,7 @@ function Header() {
   return (
     <>
      
-      <Navbar bg="dark" variant="dark" className='MyNav sticky-top '>
+      <Navbar bg="dark" variant="light" className='MyNav sticky-top '>
         <Container>
           <Navbar.Brand className='' >
             <img 
