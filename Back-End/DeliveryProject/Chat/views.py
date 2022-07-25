@@ -1,15 +1,14 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .pusher import  pusher_client
+from .pusher import pusher_client
 
 
-class MessageAPIview(APIView):
+class MessageAPIView(APIView):
+
     def post(self, request):
-        pusher_client.trigger('my-channel','message',{
+        pusher_client.trigger('chat', 'message', {
             'username': request.data['username'],
             'message': request.data['message'],
         })
 
         return Response([])
-
-
