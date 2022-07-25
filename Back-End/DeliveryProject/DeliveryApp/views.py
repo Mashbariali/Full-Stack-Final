@@ -58,16 +58,19 @@ def update_Delegate(request: Request, Delegate_id):
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
 
     updated_delegate = NewDelegateSerializer(instance=newDelegate, data=request.data)
-    if updated_delegate.is_valid():
-        updated_delegate.save()
-        responseData = {
+    if request.user.id == newDelegate.user.id:
+        if updated_delegate.is_valid():
+            updated_delegate.save()
+            responseData = {
             "msg": "updated Delegate successefully"
         }
 
-        return Response(responseData)
+            return Response(responseData)
+        else:
+            print(updated_delegate.errors)
+            return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        print(updated_delegate.errors)
-        return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
+         return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["DELETE"])
@@ -78,7 +81,7 @@ def delete_Delegate(request: Request, Delegate_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
-    if request.user == newDelegate.user:
+    if request.user.id == newDelegate.user.id:
      newDelegate.delete()
      return Response({"msg": "DELETE Delegate Successfully"})
     else:
@@ -122,12 +125,12 @@ def add_Order(request: Request):
         dataResponse = {"msg": "Sorry, couldn't add new Order..."}
         return Response(dataResponse, status=status.HTTP_400_BAD_REQUEST)
 
-
+#Only the Delegate can list the orders.
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
-#@permission_classes([IsAdminUser])
+@permission_classes([IsAuthenticated])
 def list_Orders(request: Request):
-    if not request.user.is_authenticated: #or not request.user.has_perm('DeliveryApp.list_NewDelegate'):
+    if not request.user.is_authenticated or not request.user.has_perm('DeliveryApp.list_Orders'):
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
     request.data.update(user=request.user.id)
 
@@ -148,16 +151,19 @@ def update_Order(request: Request, Order_id):
     order = Order.objects.get(id=Order_id)
 
     update_order = OrderSerializer(instance=order, data=request.data)
-    if update_order.is_valid():
-        update_order.save()
-        responseData = {
+    if request.user.id == order.user.id:
+        if update_order.is_valid():
+            update_order.save()
+            responseData = {
             "msg": "updated Order successefully"
         }
 
-        return Response(responseData)
+            return Response(responseData) 
+        else:
+            print(update_order.errors)
+            return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
     else:
-        print(update_order.errors)
-        return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
+         return Response({"msg": "bad request, cannot update"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["DELETE"])
@@ -168,7 +174,7 @@ def delete_Order(request: Request, Order_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     order = Order.objects.get(id=Order_id)
-    if request.user == order.user:
+    if request.user.id == order.user.id:
         order.delete()
         return Response({"msg": "Delete Order Successfully"})
     else:
@@ -204,7 +210,7 @@ def delete_AppRating(request: Request, AppRating_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     appRating = AppRating.objects.get(id=AppRating_id)
-    if request.user == appRating.user:
+    if request.user.id == appRating.user.id:
         appRating.delete()
         return Response({"msg": "Delete Rating Successfully"})
     else:
@@ -239,10 +245,11 @@ def delete_DelegateRating(request: Request, DelegateRating_id):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
 
     delegateRating = DelegateRating.objects.get(id=DelegateRating_id)
-    if request.user == delegateRating.user:
+    if request.user.id == delegateRating.user.id:
             delegateRating.delete()
             return Response({"msg": "Delete Rating Successfully"})
     else:
+
 
      return Response({"msg": "bad request, cannot delete other Rating "}, status=status.HTTP_401_UNAUTHORIZED)
     
