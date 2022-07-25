@@ -10,8 +10,11 @@ export default function Carousel() {
   return (
     <MDBCarousel className='carousel'>
       <MDBCarouselInner>
+      
         <MDBCarouselItem className='active'>
-          <MDBCarouselElement src='https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif' alt='...' />
+            <h1 className='carouselText animate__animated animate__rollIn'>....... </h1>
+          <MDBCarouselElement className='carousel-img' src='https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif' alt='...' />
+          
         </MDBCarouselItem>
       </MDBCarouselInner>
     </MDBCarousel>

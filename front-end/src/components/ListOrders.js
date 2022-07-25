@@ -1,26 +1,44 @@
 import React from 'react'
+import axios from 'axios'
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBBtn } from 'mdb-react-ui-kit';
+
 import {Card, Row , Col , Button} from 'react-bootstrap';
-import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup } from 'mdb-react-ui-kit';
+// import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBCardGroup } from 'mdb-react-ui-kit';
+import {useEffect, useState} from 'react'
 function ListOrders() {
-  return (<div className=' col d-flex justify-content-center'>
 
-  <Row className=' mt-5 text-center '>
-    <Col >
+  const [orders,setOrders] = useState([]);
 
-    <Card style={{ width: '16rem' }} className='mx-5 mt-5 bootstrapcard animateanimated animatezoomIn '>
-  <Card.Img variant="top" src="" className=''/>
-  <Card.Body>
-    <Card.Title className='cardtitle'></Card.Title>
-    <Card.Text className='cardtext mt-5'>
-      
-          </Card.Text >
-    <Button variant="dark" a href=''>طلب</Button>
-  </Card.Body>
-</Card>
-</Col> 
-</Row>
 
-</div>
+  useEffect(()=>{
+    //here your will be fetch all orders fro the data in  endPoint.
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((e)=>{
+      setOrders(e.data)
+    })
+  })
+  return (
+  // 
+  orders.map((e)=>(
+    // <li>{e.title}</li>
+    <div className=' col d-flex justify-content-center card_order'>
+    
+    <Card className="text-center">
+      <Card.Header>Featured</Card.Header>
+      <Card.Body>
+        <Card.Title>{e.id}</Card.Title>
+        <Card.Text>
+          With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button variant="primary" href='/chatt'>Accept</Button>
+      </Card.Body>
+      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    </Card>
+  </div>
+  ))
+
+  // 
+  
+ 
   )
 }
 
