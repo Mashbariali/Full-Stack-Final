@@ -56,7 +56,6 @@ def update_Delegate(request: Request, Delegate_id):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.change_scan_vul'):
         return Response({"msg": "Not Allowed please LOGIN..."}, status=status.HTTP_401_UNAUTHORIZED)
     newDelegate = NewDelegate.objects.get(id=Delegate_id)
-
     updated_delegate = NewDelegateSerializer(instance=newDelegate, data=request.data)
     if updated_delegate.is_valid():
         updated_delegate.save()
