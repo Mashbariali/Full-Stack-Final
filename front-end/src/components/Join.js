@@ -39,13 +39,13 @@ const join=() =>{
         <label >رقم الهوية الوطنية</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setIdNumber(e.target.value);}}></input>
         <label >صورة شخصية</label>
-        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setPersonImage(e.target.value);}}></input>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setPersonImage(e.target.value);}}></input>
         <label >رقم لوحة المركبة</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setCarInfo(e.target.value);}}></input>
         <label >صورة المركبة</label>
-        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setCarImage(e.target.value);}}></input>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setCarImage(e.target.value);}}></input>
         <label >رخصة القيادة</label>
-        <input className="form-control mt-2 mb-3" type="file" onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
+        <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
         <button className="btn btn-primary mt-3" onClick={join} >طلب الانضمام!</button>
       </div>
     </div>

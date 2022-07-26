@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 class NewDelegate(models.Model):
     name = models.CharField(max_length=256)
-    PhoneNumber=models.IntegerField(max_length=10)
-    IdNumber=models.IntegerField(max_length=10)
-    PersonalImage = models.URLField()
-    CarInfo = models.TextField(max_length=200)
-    CarImage = models.URLField()
+    PhoneNumber=models.IntegerField(blank=True)
+    IdNumber=models.IntegerField(blank=True)
+    PersonalImage = models.URLField(blank=True)
+    CarInfo = models.TextField(max_length=200,blank=True)
+    CarImage = models.URLField(blank=True)
     #علي شاك فيها
-    DrivingLicense = models.URLField()
+    DrivingLicense = models.URLField(blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
@@ -77,6 +77,7 @@ class DelegateRating(models.Model):
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     rate = models.CharField(max_length=250, choices=RATE_CHOICES)
+    Description = models.TextField()
     profile = models.ForeignKey(NewDelegate, on_delete=models.CASCADE)
 
 class CancellingOrder(models.Model):

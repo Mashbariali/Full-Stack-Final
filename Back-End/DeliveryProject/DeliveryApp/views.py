@@ -18,7 +18,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 def add_Delegate(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to add New Delegate ..."}, status=status.HTTP_401_UNAUTHORIZED)
-
+    request.data.update(user=request.user.id)
     NewDelegate = NewDelegateSerializer(data=request.data)
     if NewDelegate.is_valid():
         NewDelegate.save()
