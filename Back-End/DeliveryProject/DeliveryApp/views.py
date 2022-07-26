@@ -110,7 +110,7 @@ def delete_Delegate(request: Request, Delegate_id):
 def add_Order(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to add New Order ..."}, status=status.HTTP_401_UNAUTHORIZED)
-
+    request.data.update(user=request.user.id)
     order = OrderSerializer(data=request.data)
     if order.is_valid():
         order.save()
@@ -127,9 +127,9 @@ def add_Order(request: Request):
 #Only the Delegate can list the orders.
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def list_Orders(request: Request):
-    if not request.user.is_authenticated or not request.user.has_perm('DeliveryApp.list_Orders'):
+    if not request.user.is_authenticated: #or not request.user.has_perm('DeliveryApp.view_order'):
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
     request.data.update(user=request.user.id)
 
@@ -225,6 +225,7 @@ def delete_AppRating(request: Request, AppRating_id):
 def add_DelegateRating(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to add New Rating ..."}, status=status.HTTP_401_UNAUTHORIZED)
+    request.data.update(user=request.user.id)
 
     delegateRating = DelegateRatingSerializer(data=request.data)
     if delegateRating.is_valid():

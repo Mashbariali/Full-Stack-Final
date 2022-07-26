@@ -76,9 +76,9 @@ class DelegateRating(models.Model):
         ("1", "bad"),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    rate = models.CharField(max_length=250, choices=RATE_CHOICES)
-    Description = models.TextField()
-    profile = models.ForeignKey(NewDelegate, on_delete=models.CASCADE)
+    rate = models.CharField(max_length=250, choices=RATE_CHOICES,blank=True)
+    Description = models.TextField(blank=True)
+    # profile = models.ForeignKey(NewDelegate, on_delete=models.CASCADE)
 
 class CancellingOrder(models.Model):
     Cancel_CHOICES = (

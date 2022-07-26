@@ -12,40 +12,27 @@ function ListOrders() {
 
   useEffect(()=>{
     //here your will be fetch all orders fro the data in  endPoint.
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((e)=>{
-      setOrders(e.data)
+    axios.get("http://127.0.0.1:8000/Delivery/list_Orders").then((res)=>{
+      setOrders(res.data)
     })
   })
   return (
   // 
-  orders.map((e)=>(
+  orders.map((item)=>(
     // <li>{e.title}</li>
     <div className=' col d-flex justify-content-center'>
     
-    <MDBRow>
-      <MDBCol sm='6'>
-        <MDBCard>
-          <MDBCardBody>
-            <MDBCardTitle>{e.title}</MDBCardTitle>
-            <MDBCardText>
-              With supporting text below as a natural lead-in to additional content.
-            </MDBCardText>
-            <MDBBtn href='#'>Go somewhere</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-      <MDBCol sm='6'>
-        <MDBCard>
-          <MDBCardBody>
-            <MDBCardTitle>{e.id}</MDBCardTitle>
-            <MDBCardText>
-              With supporting text below as a natural lead-in to additional content.
-            </MDBCardText>
-            <MDBBtn href='/home'>Go somewhere</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
+
+    <Card className="text-center">
+      <Card.Header>Featured</Card.Header>
+      <Card.Body>
+        <Card.Title>{item.PackageType}</Card.Title>
+        <Card.Text>
+        </Card.Text>
+        <Button variant="primary" href='/chatt'>Accept</Button>
+      </Card.Body>
+      <Card.Footer className="text-muted">2 days ago</Card.Footer>
+    </Card>
   </div>
   ))
 

@@ -7,15 +7,22 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 function AddOrder() {
- const [order,setOrder]=useState([])//Must be the same name in the database .
+ const [PackageType, setPackageType] = useState();
+ const [FromWhichCity, setFromWhichCity] = useState();
+ const [ToWhichCity, setToWhichCity] = useState();
+ const [DeliveryTime, setDeliveryTime] = useState();
+ const [Description, setDescription] = useState();
+
+
  const navigate = useNavigate("")
 
 
  const token =localStorage.getItem("token")
 
- const join=() =>{
+
+ const SendOrder=() =>{
    axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
-    //  name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
+    PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
      alert('Successfully Login');
      navigate("/")
@@ -28,97 +35,59 @@ function AddOrder() {
 
   return (
     <div>
-        
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>نوع الطلب:</Form.Label>
-        <Form>
-      <Form.Check 
-        type="radio"
-        id="custom-switch"
-        label="طرد كبير"
+        <label >حجم الطرد</label>
+        <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
+        <option value="طرد صغير">صغير</option>
+        <option value="طرد متوسط">وسط</option>
+        <option value="طرد كبير">كبير</option>
 
-        id="custom-switch"
-        label="طرد وسط"
 
-        id="custom-switch"
-        label="طرد صغير"
-      />
-      </Form>
-    <hr/>
-    <Form.Label>الوقت المحدد:</Form.Label>
-        <Form>
-      <Form.Check 
-        type="switch"
-        id="custom-switch"
-        label="من 0 الى 5 ساعات"
-      />
-       <Form.Check 
-        type="switch"
-        id="custom-switch"
-        label="من 6 الى12  ساعات"
-      />
-       <Form.Check 
-        type="switch"
-        id="custom-switch"
-        label="من 12 الى ... ساعات"
-      />
-      <hr/>
-      <strong>من:</strong>
-
-      <Form.Select size="sm">
-        <option>الرياض</option>
-        <option>مكه</option>
-        <option>الدمام</option>
-        <option>جده</option>
-        <option>المدينة</option>
-        <option>أبها</option>
-        <option>القصيم</option>
-        <option>ألاحساء</option>
-        <option>جازان</option>
-        <option>تبوك</option>
-        <option>نجران</option>
-        <option>حائل</option>
-        <option>الحدود الشمالية</option>
       </Form.Select>
-    
-    
-    <hr/>
-    <strong>الى:</strong>
-      <Form.Select size="sm">
-        <option>الرياض</option>
-        <option>مكه</option>
-        <option>الدمام</option>
-        <option>جده</option>
-        <option>المدينة</option>
-        <option>أبها</option>
-        <option>القصيم</option>
-        <option>ألاحساء</option>
-        <option>جازان</option>
-        <option>تبوك</option>
-        <option>نجران</option>
-        <option>حائل</option>
-        <option>الحدود الشمالية</option>
+      <label >التوصيل خلال مدة:</label>
+        <Form.Select size="sm" onChange={(e) => setDeliveryTime(e.target.value)}>
+        <option value="0-5h">من 0-5 ساعة</option>
+        <option value="6-12h">من 6-12 ساعة</option>
+        <option value="+12">اكثر من 12 ساعة</option>
       </Form.Select>
-    
-    </Form>
 
-<hr/>
+      <label >من مدينة:</label>
+        <Form.Select size="sm" onChange={(e) => setFromWhichCity(e.target.value)}>
+        <option value="الرياض">الرياض</option>
+        <option value="مكة">مكة</option>
+        <option value="الدمام">الدمام</option>
+        <option value="جدة">جدة</option>
+        <option value="المدينة">المدينة</option>
+        <option value="أبها">أبها</option>
+        <option value="جازان">جازان</option>
+        <option value="تبوك">تبوك</option>
+        <option value="نجران">نجران</option>
+        <option value="حائل">حائل</option>
+        <option value="الحدود الشماليه">الحدود الشمالية</option>
 
-      </Form.Group>
-    
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>ملاحظات </Form.Label>
-        <Form.Control type="text" placeholder="أكتب ملاحظاتك !" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-       
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        إرسال
-      </Button>
-   </Form>
-   
+      </Form.Select>
+
+
+      <label >الى مدينة:</label>
+        <Form.Select size="sm" onChange={(e) => setToWhichCity(e.target.value)}>
+        <option value="الرياض">الرياض</option>
+        <option value="مكة">مكة</option>
+        <option value="الدمام">الدمام</option>
+        <option value="جدة">جدة</option>
+        <option value="المدينة">المدينة</option>
+        <option value="أبها">أبها</option>
+        <option value="جازان">جازان</option>
+        <option value="تبوك">تبوك</option>
+        <option value="نجران">نجران</option>
+        <option value="حائل">حائل</option>
+        <option value="الحدود الشماليه">الحدود الشمالية</option>
+      </Form.Select>
+
+      <label >ملاحظات</label>
+        <textarea rows="8"
+              className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
+            ></textarea>
+
+            <button className="btn btn-primary mt-2" onClick={SendOrder}>ارسال الطلب</button>
     </div>
   )
 }
