@@ -92,14 +92,10 @@ html {
   }
   .log3{
     position: absolute;
-    left: 0px;
-    top: 12px;
-    border: 2px solid rgb(69, 45, 4) !important;
 
   }
   .log2{
     position: absolute;
-    left: 130px;
   }
 
 .scrollarea {

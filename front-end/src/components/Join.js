@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 function Join() {
-    const [image,setImage] = useState('')
     const [name, setName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState("")
     const [IdNumber, setIdNumber] = useState("")
@@ -12,12 +11,21 @@ function Join() {
     const [DrivingLicense, setDrivingLicense] = useState("")
     const navigate = useNavigate("")
 
+<<<<<<< HEAD
+      
+
+=======
     const token =localStorage.getItem("token")
+>>>>>>> de6657d12c67d51527432a76a3bfdee9cd7c3440
 
 const join=() =>{
   axios.post ('http://127.0.0.1:8000/Delivery/add_Delegate', {
     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
+<<<<<<< HEAD
+  }).then(res=>{
+=======
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+>>>>>>> de6657d12c67d51527432a76a3bfdee9cd7c3440
     alert('Successfully Login');
     navigate("/")
   })
@@ -32,6 +40,7 @@ const join=() =>{
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">نموذج الانضمام الى فريق التوصيل</h1>
         <h3 className="text-center py-5 mc-5 ">طلبات الانضمام يتم مراجعتها والموافقة عليها خلال 24 ساعة عمل</h3>
+
         <label >الاسم</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setName(e.target.value);}}></input>
         <label >رقم الجوال</label>
@@ -47,6 +56,7 @@ const join=() =>{
         <label >رخصة القيادة</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
         <button className="btn btn-primary mt-3" onClick={join} >طلب الانضمام!</button>
+
       </div>
     </div>
   )
