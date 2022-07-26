@@ -7,11 +7,16 @@ function AddRating() {
 
     const [rate, setRate] = useState("")
     const [Description, setDescription] = useState("")
+    const [val, setVal] = useState(4);
     const navigate = useNavigate("")
 
+    const token =localStorage.getItem("token")
 
 const Rating=() =>{
 
+  axios.post ('http://127.0.0.1:8000/Delivery/add_DelegateRating', {
+    rate, Description
+  },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
   axios.post ('API Rating endpoint', {
     rate, Description
   }).then(res=>{
@@ -41,6 +46,7 @@ const Rating=() =>{
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
            <button className="btn btn-primary mt-3" onClick={Rating} >مشاركة التقييم</button>
+           <h1>{val}</h1>
         </div>
       </div>
     </div>
@@ -48,4 +54,4 @@ const Rating=() =>{
   )
 }
 
-export default AddRating
+export default AddRating;
