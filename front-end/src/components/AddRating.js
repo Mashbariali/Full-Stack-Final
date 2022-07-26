@@ -17,6 +17,9 @@ const Rating=() =>{
   axios.post ('http://127.0.0.1:8000/Delivery/add_DelegateRating', {
     rate, Description
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+  axios.post ('API Rating endpoint', {
+    rate, Description
+  }).then(res=>{
     // alert('Successfully Login');
     navigate("/")
   })

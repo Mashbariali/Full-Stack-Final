@@ -7,7 +7,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 function AddOrder() {
- const [order,setOrder]=useState([])//Must be the same name in the database .
  const [PackageType, setPackageType] = useState();
  const [FromWhichCity, setFromWhichCity] = useState();
  const [ToWhichCity, setToWhichCity] = useState();
@@ -19,6 +18,7 @@ function AddOrder() {
 
 
  const token =localStorage.getItem("token")
+
 
  const SendOrder=() =>{
    axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
@@ -37,9 +37,9 @@ function AddOrder() {
     <div>
         <label >حجم الطرد</label>
         <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
-        <option value="طرد صغير">كبير</option>
-        <option value="طرد وسط">وسط</option>
-        <option value="طرد كبير">صغير</option>
+        <option value="طرد صغير">صغير</option>
+        <option value="طرد متوسط">وسط</option>
+        <option value="طرد كبير">كبير</option>
 
 
       </Form.Select>
@@ -86,6 +86,7 @@ function AddOrder() {
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
+
             <button className="btn btn-primary mt-2" onClick={SendOrder}>ارسال الطلب</button>
     </div>
   )
