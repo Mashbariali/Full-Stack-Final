@@ -3,16 +3,19 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 function AddOrder() {
  const [order,setOrder]=useState([])//Must be the same name in the database .
+ const navigate = useNavigate("")
 
 
  const token =localStorage.getItem("token")
 
  const join=() =>{
    axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
-     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
+    //  name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
      alert('Successfully Login');
      navigate("/")
@@ -31,17 +34,13 @@ function AddOrder() {
         <Form.Label>نوع الطلب:</Form.Label>
         <Form>
       <Form.Check 
-        type="checkbox"
+        type="radio"
         id="custom-switch"
         label="طرد كبير"
-      />
-       <Form.Check 
-        type="checkbox"
+
         id="custom-switch"
         label="طرد وسط"
-      />
-       <Form.Check 
-        type="checkbox"
+
         id="custom-switch"
         label="طرد صغير"
       />

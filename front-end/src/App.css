@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
 body {
-  background-color: #000000 !important;
+  background-color: #fff !important;
   color: white !important;
 
   margin: 0;
@@ -92,14 +92,10 @@ html {
   }
   .log3{
     position: absolute;
-    left: 0px;
-    top: 12px;
-    border: 2px solid rgb(69, 45, 4) !important;
 
   }
   .log2{
     position: absolute;
-    left: 130px;
   }
 
 .scrollarea {
@@ -116,6 +112,7 @@ html {
   background-color: #00A3A3 !important;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -124,3 +121,16 @@ html {
   height: 100vh;
   width: 100%
 }
+=======
+.cardGroup{
+  color: rgb(24, 22, 22);
+}
+.card-group img{
+  width: 35%;
+  height: 35%;
+}
+
+.text-white{
+  color: white !important
+}
+>>>>>>> baa0af80fccf04a11ab7f0ef6b5694201303b127

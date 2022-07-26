@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Chat from './components/Chat'
 import Chatt from './components/Chatt'
 import AddOrder from './components/AddOrder';
+import AddRating from './components/AddRating'
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
             {/* <Route path='/orders'              element={< Orders />}></Route> */}
             <Route path='/Chatt'                   element={< Chatt />}></Route>
             <Route path='/addOrder'                   element={< AddOrder />}></Route>
+            <Route path='/addRating'                   element={< AddRating />}></Route>
+
 
             </Route>
         </Routes>
