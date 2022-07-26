@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class NewDelegate(models.Model):
     name = models.CharField(max_length=256)
-    PhoneNumber=models.IntegerField(blank=True)
+    PhoneNumber=models.IntegerField(blank=True,null=True)
     IdNumber=models.IntegerField(blank=True)
     PersonalImage = models.URLField(blank=True)
     CarInfo = models.TextField(max_length=200,blank=True)
