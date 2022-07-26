@@ -38,7 +38,7 @@ function AddOrder() {
         <label >حجم الطرد</label>
         <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
         <option value="طرد صغير">كبير</option>
-        <option value="طرد وسط">وسط</option>
+        <option value="طرد متوسط">وسط</option>
         <option value="طرد كبير">صغير</option>
 
 
