@@ -45,7 +45,7 @@ const Rating=() =>{
         <h3 className="text-center py-5 mc-5 ">مامدى رضاك عن تجربة التوصيل ؟</h3>
         <label >مدى الرضى</label>
         <Form.Select size="sm" >
-        <option value={} onChange={(e)=> {setRate(e.target);}}>رضي</option>
+        <option onChange={(e)=> {setRate(e.target);}}>رضي</option>
         <option onChange={(e)=> {setRate(e.target.value);}}>3</option>
         <option onChange={(e)=> {setRate(e.target.value);}}>2</option>
         <option onChange={(e)=> {setRate(e.target.value);}}>1</option>
