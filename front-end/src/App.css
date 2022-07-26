@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&family=Noto+Sans+Arabic&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
 body {
   background-color: #000000 !important;
   color: white !important;
-  font-family: 'Noto Kufi Arabic', sans-serif !important;
 
   margin: 0;
   padding: 0;
@@ -111,3 +109,5 @@ html {
     margin: 8px;
     color:rgb(13, 19, 19)
 }
+
+
