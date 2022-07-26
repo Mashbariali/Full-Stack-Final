@@ -20,9 +20,9 @@ function AddOrder() {
 
  const token =localStorage.getItem("token")
 
- const join=() =>{
-   axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
-    // order, PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
+ const SendOrder=() =>{
+   axios.post (' https://wasllha2022-django.herokuapp.com/Delivery/add_Order', {
+    PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
      alert('Successfully Login');
      navigate("/")
@@ -86,6 +86,7 @@ function AddOrder() {
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
+            <button className="btn btn-primary mt-2" onClick={SendOrder}>ارسال الطلب</button>
     </div>
   )
 }
