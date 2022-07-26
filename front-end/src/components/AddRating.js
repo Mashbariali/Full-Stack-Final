@@ -6,15 +6,14 @@ import Form from 'react-bootstrap/Form';
 function AddRating() {
 
     const [rate, setRate] = useState("")
-    const [description, setDescription] = useState("")
-    const [val, setVal] = useState(4);
+    const [Description, setDescription] = useState("")
     const navigate = useNavigate("")
 
 
 const Rating=() =>{
 
   axios.post ('API Rating endpoint', {
-    rate, description
+    rate, Description
   }).then(res=>{
     // alert('Successfully Login');
     navigate("/")
@@ -28,7 +27,7 @@ const Rating=() =>{
         <h1 className="text-center py-5 mc-5 ">تقييمك يهمنا</h1>
         <h3 className="text-center py-5 mc-5 ">مامدى رضاك عن تجربة التوصيل ؟</h3>
         <label >مدى الرضى</label>
-        <Form.Select size="sm" onChange={(e) => setVal(e.target.value)}>
+        <Form.Select size="sm" onChange={(e) => setRate(e.target.value)}>
         <option value="4">راض جداً</option>
         <option value="3">راض</option>
         <option value="2">محايد</option>

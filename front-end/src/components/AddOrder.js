@@ -7,7 +7,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 function AddOrder() {
- const [order,setOrder]=useState([])//Must be the same name in the database .
  const [PackageType, setPackageType] = useState();
  const [FromWhichCity, setFromWhichCity] = useState();
  const [ToWhichCity, setToWhichCity] = useState();
@@ -22,7 +21,7 @@ function AddOrder() {
 
  const join=() =>{
    axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
-    // order, PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
+     PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
      alert('Successfully Login');
      navigate("/")
@@ -86,6 +85,13 @@ function AddOrder() {
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
+            <h1>{PackageType}</h1>
+            <h1>{FromWhichCity}</h1>
+            <h1>{ToWhichCity}</h1>
+            <h1>{DeliveryTime}</h1>
+            <h1>{Description}</h1>
+
+
     </div>
   )
 }
