@@ -11,21 +11,18 @@ function Join() {
     const [DrivingLicense, setDrivingLicense] = useState("")
     const navigate = useNavigate("")
 
-<<<<<<< HEAD
-      
 
-=======
     const token =localStorage.getItem("token")
->>>>>>> de6657d12c67d51527432a76a3bfdee9cd7c3440
+
 
 const join=() =>{
   axios.post ('http://127.0.0.1:8000/Delivery/add_Delegate', {
     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
-<<<<<<< HEAD
+
   }).then(res=>{
-=======
+
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
->>>>>>> de6657d12c67d51527432a76a3bfdee9cd7c3440
+
     alert('Successfully Login');
     navigate("/")
   })
