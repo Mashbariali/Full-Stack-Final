@@ -7,9 +7,18 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+ 
 
 }
+@keyframes bg-animation {
+  0% {
+    background-position: left;
 
+  }
+  100%{
+    background-position: right;
+  }
+}
 
 
 .foot {
@@ -26,7 +35,6 @@ input[type='email']{
   .footer {
     flex-grow: 1;
     position: sticky;
-    
     /* top: 140px; */
     }
 
@@ -34,7 +42,6 @@ input[type='email']{
 html {
   height: 100%;
 }
-
 .carousel{
   opacity: 0.8;
   background-size: cover !important;
@@ -59,17 +66,23 @@ html {
     text-decoration-line: none !important;
     color: white !important;
     padding: 3px;
-    background-color:#007575;
-    /* background-color: rgb(94, 64, 8); */
+    color:rgb(13, 19, 19) !important;
+    background-color: rgba(139, 0, 0, 0.536) !important;
+    /* background-color: rgba(135, 133, 127, 0.407) !important; */
     margin: 3px;
-    transition: 0.5;
+    color:rgb(13, 19, 19) !important;
+    transition: 5 !important;
     border-radius: 7px;
+    padding: 5px !important;
+
 
   }
   a:hover{
-    background-color: rgb(26, 23, 23);
+    /* background-color: rgb(26, 23, 23); */
     color:rgb(13, 19, 19);
     transition: 0.5;
+    animation:  bg-animation 5s infinite alternate !important;
+    background-color: darkred !important;
   }
   .carousel-img{
     background-size: cover !important;
@@ -107,8 +120,9 @@ html {
 
 
 .Navbar{
-  color: #007575;
-  background-color: #00A3A3 !important;
+  color: #0075751d;
+  background-color: white !important;
+  
 }
 
 .cardGroup{
@@ -122,3 +136,21 @@ html {
 .text-white{
   color: white !important
 }
+
+.btnLoginNow{
+  width: 32%;
+  margin: 18px ;
+  margin: 0 !important;
+  background-color: rgb(175, 16, 16) !important;
+}
+.whatWait{
+  background-color: #ccc;
+  padding: 4%;
+  margin: 0;
+}
+
+.footerr{
+  background-color: rgba(255, 0, 0, 0.349) !important;
+  /* z-index:  !important; */
+}
+
