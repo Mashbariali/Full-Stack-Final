@@ -6,6 +6,23 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 function AddOrder() {
  const [order,setOrder]=useState([])//Must be the same name in the database .
+
+
+ const token =localStorage.getItem("token")
+
+ const join=() =>{
+   axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
+     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
+   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+     alert('Successfully Login');
+     navigate("/")
+   })
+ 
+ 
+ }
+
+
+
   return (
     <div>
         
