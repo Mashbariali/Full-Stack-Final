@@ -13,7 +13,7 @@ function Login() {
 
   const loginUser = () => {
     axios
-      .post(`https://wasllha2022-django.herokuapp.com/Users/login`, {
+      .post(`http://127.0.0.1:8000/Users/login`, {
         username,
         password
        })
