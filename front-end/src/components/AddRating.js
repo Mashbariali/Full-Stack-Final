@@ -7,24 +7,8 @@ function AddRating() {
 
     const [rate, setRate] = useState("")
     const [description, setDescription] = useState("")
+    const [val, setVal] = useState(4);
     const navigate = useNavigate("")
-
-    // if (rate == "راضي جدا")
-    // {
-    //   setRate(4)
-    // }
-    // else if (rate == "راضي")
-    // {
-    //   setRate(3)
-    // }
-    // else if (rate == "محايد")
-    // {
-    //   setRate(2) 
-    // }
-    // else if (rate == "غير راضي")
-    // {   
-    //   setRate(1)
-    // }
 
 
 const Rating=() =>{
@@ -44,11 +28,12 @@ const Rating=() =>{
         <h1 className="text-center py-5 mc-5 ">تقييمك يهمنا</h1>
         <h3 className="text-center py-5 mc-5 ">مامدى رضاك عن تجربة التوصيل ؟</h3>
         <label >مدى الرضى</label>
-        <Form.Select size="sm" >
-        <option value={} onChange={(e)=> {setRate(e.target);}}>رضي</option>
-        <option onChange={(e)=> {setRate(e.target.value);}}>3</option>
-        <option onChange={(e)=> {setRate(e.target.value);}}>2</option>
-        <option onChange={(e)=> {setRate(e.target.value);}}>1</option>
+        <Form.Select size="sm" onChange={(e) => setVal(e.target.value)}>
+        <option value="4">راض جداً</option>
+        <option value="3">راض</option>
+        <option value="2">محايد</option>
+        <option value="1">غير راض</option>
+
 
       </Form.Select>
         <label >ملاحظات</label>
@@ -56,8 +41,6 @@ const Rating=() =>{
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
            <button className="btn btn-primary mt-3" onClick={Rating} >مشاركة التقييم</button>
-
-           <h1>{description}</h1>
         </div>
       </div>
     </div>
