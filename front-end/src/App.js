@@ -12,7 +12,6 @@ import Chat from './components/Chat'
 import Chatt from './components/Chatt'
 import AddOrder from './components/AddOrder';
 import AddRating from './components/AddRating'
-
 function App() {
 
   return (
