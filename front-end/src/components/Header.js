@@ -30,8 +30,8 @@ function Header() {
           <Nav.Link><Link to="/list-orders"className='me-2'>استعراض الطلبات</Link></Nav.Link>
           <Nav.Link><Link to="/join"className='me-2'>الانضمام</Link></Nav.Link>
                {/* <Button className='userbuttom me-3 log1' a href='/register' variant="outline-info" >تسجيل </Button> */}
-              <Button className='userbuttom me-3 log2' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
-              <Button className='userbuttom log3' a href='/' variant="outline-danger" >تسجيل الخروج</Button>
+              <Button className='userbuttom mr-5 ' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
+              <Button className='userbuttom mr-3' a href='/' variant="outline-danger" >تسجيل الخروج</Button>
        </Nav>
         </Container>
       </Navbar>

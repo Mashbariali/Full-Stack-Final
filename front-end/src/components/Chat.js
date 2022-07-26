@@ -38,7 +38,7 @@ function Chat() {
 
   return (
 
-      <div className="container">
+      <div className="col-md-6 mx-auto d-flex flex-column mt-5">
           <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
               <div
                   className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
@@ -59,7 +59,7 @@ function Chat() {
               </div>
           </div>
           <form onSubmit={e => submit(e)}>
-              <input className="form-control" placeholder="Write a message" value={message}
+              <input className="form-control" placeholder="اكتب رسالتك هنا .." value={message}
                      onChange={e => setMessage(e.target.value)}
               />
           </form>
