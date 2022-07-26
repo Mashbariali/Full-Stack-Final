@@ -116,3 +116,11 @@ html {
   background-color: #00A3A3 !important;
 }
 
+
+
+
+
+.map-container {
+  height: 100vh;
+  width: 100%
+}

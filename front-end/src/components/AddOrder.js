@@ -86,7 +86,7 @@ function AddOrder() {
     
     <hr/>
     <strong>الى:</strong>
-      <Form.Select size="sm">
+      <Form.Select size="sm" >
         <option>الرياض</option>
         <option>مكه</option>
         <option>الدمام</option>
