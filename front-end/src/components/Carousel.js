@@ -13,7 +13,7 @@ export default function Carousel() {
       
         <MDBCarouselItem className='active'>
             <h1 className='carouselText animate__animated animate__rollIn'>....... </h1>
-          <MDBCarouselElement className='carousel-img' src='https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif' alt='...' />
+          {/* <MDBCarouselElement className='carousel-img' src='https://miro.medium.com/max/1400/1*fE3JkGyzhWXlXApVnShDtw.gif' alt='...' /> */}
           
         </MDBCarouselItem>
       </MDBCarouselInner>
