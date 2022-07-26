@@ -79,6 +79,19 @@ class DelegateRating(models.Model):
     rate = models.CharField(max_length=250, choices=RATE_CHOICES)
     profile = models.ForeignKey(NewDelegate, on_delete=models.CASCADE)
 
+class CancellingOrder(models.Model):
+    Cancel_CHOICES = (
+        ("السعر غير مناسب", "السعر غير مناسب"),
+        ("المندوب غير مناسب", "المندوب غير مناسب"),
+        ("غير ذلك", "غير ذلك"),
+        
+    )
+    Cancel = models.CharField(max_length=250, choices=Cancel_CHOICES)
+    Description = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+
 
     # الفاتورة*************
 

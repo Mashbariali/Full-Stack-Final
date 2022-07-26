@@ -188,7 +188,7 @@ html {
     text-decoration-line: none !important;
     color: white !important;
     padding: 3px;
-    background-color: rgb(48, 48, 48);
+    background-color:#007575;
     /* background-color: rgb(94, 64, 8); */
     margin: 3px;
     transition: 0.5;
@@ -236,4 +236,9 @@ html {
 .card_order{
     margin: 8px;
     color:rgb(13, 19, 19)
+}
+
+.Navbar{
+  color: #007575;
+  background-color: #00A3A3 !important;
 }
