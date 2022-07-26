@@ -20,8 +20,9 @@ function ListOrders() {
   // 
   orders.map((item)=>(
     // <li>{e.title}</li>
-    <div className=' col d-flex justify-content-center card_order'>
+    <div className=' col d-flex justify-content-center'>
     
+
     <Card className="text-center">
       <Card.Header>Featured</Card.Header>
       <Card.Body>

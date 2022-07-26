@@ -7,6 +7,7 @@ import {
 
 export default function Footer() {
   return (
+    <div className='container '>
     <div class='footerr mt-5'>
     <MDBFooter className='footer bg-dark text-center text-white'>
       <MDBContainer className='p-4 pb-0'>
@@ -41,6 +42,7 @@ export default function Footer() {
 
       </div>
     </MDBFooter>
+    </div>
     </div>
   );
 }
