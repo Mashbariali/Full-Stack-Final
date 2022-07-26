@@ -110,7 +110,7 @@ def delete_Delegate(request: Request, Delegate_id):
 def add_Order(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to add New Order ..."}, status=status.HTTP_401_UNAUTHORIZED)
-
+    request.data.update(user=request.user.id)
     order = OrderSerializer(data=request.data)
     if order.is_valid():
         order.save()
