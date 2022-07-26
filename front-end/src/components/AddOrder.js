@@ -11,7 +11,7 @@ function AddOrder() {
         
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>نوع الطلب</Form.Label>
+        <Form.Label>نوع الطلب:</Form.Label>
         <Form>
       <Form.Check 
         type="checkbox"
@@ -30,7 +30,7 @@ function AddOrder() {
       />
       </Form>
     <hr/>
-    <Form.Label>المدينة</Form.Label>
+    <Form.Label>الوقت المحدد:</Form.Label>
         <Form>
       <Form.Check 
         type="switch"
@@ -48,6 +48,27 @@ function AddOrder() {
         label="من 12 الى ... ساعات"
       />
       <hr/>
+      <strong>من:</strong>
+
+      <Form.Select size="sm">
+        <option>الرياض</option>
+        <option>مكه</option>
+        <option>الدمام</option>
+        <option>جده</option>
+        <option>المدينة</option>
+        <option>أبها</option>
+        <option>القصيم</option>
+        <option>ألاحساء</option>
+        <option>جازان</option>
+        <option>تبوك</option>
+        <option>نجران</option>
+        <option>حائل</option>
+        <option>الحدود الشمالية</option>
+      </Form.Select>
+    
+    
+    <hr/>
+    <strong>الى:</strong>
       <Form.Select size="sm">
         <option>الرياض</option>
         <option>مكه</option>
@@ -65,6 +86,7 @@ function AddOrder() {
       </Form.Select>
     
     </Form>
+
 <hr/>
 
       </Form.Group>

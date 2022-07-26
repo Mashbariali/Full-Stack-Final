@@ -1,4 +1,5 @@
 import React from 'react'
+import './css/ChatStyle.css'
 
 function Chatt() {
   return (

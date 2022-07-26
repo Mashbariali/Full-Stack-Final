@@ -18,18 +18,19 @@ function Register() {
 
 }, [])
 
-const checkMatchPassword = (e) =>{
-  if (password != e.target.value)
+const checkMatchPassword = () =>{
+  if (password !== rePassword)
   {
     setPasswordIsMatched(true)
   }
 
   else 
   {
+    setPasswordIsMatched(false)
+    RegisterUser()
   }
   
 }
-
 
 
 // const RegisterUser=() =>{
@@ -57,7 +58,6 @@ const RegisterUser = () => {
  
   }
 
-
   return (
     <div className='container d-flex justify-content-center align-items-center'>
       <div className="col-md-6 mx-auto d-flex flex-column ">
@@ -70,10 +70,10 @@ const RegisterUser = () => {
         <input className="form-control mt-3 mb-2" type="text" placeholder='اسم المستخدم' onChange={(e)=> {setUserName(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="email" placeholder='البريد الالكتروني' onChange={(e)=> {setEmail(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="password" placeholder='كلمة المرور' onChange={(e)=> {setPassword(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="password" placeholder='اعد كتابة كلمة المرور' onChange={checkMatchPassword}></input>
+        <input className="form-control mt-3 mb-2" type="password" placeholder='اعد كتابة كلمة المرور' onChange={(e)=> {setRePassword(e.target.value);}}></input>
 
 
-        <button className="btn btn-primary mt-2" onClick={RegisterUser}>انشاء الحساب </button>
+        <button className="btn btn-primary mt-2" onClick={checkMatchPassword}>انشاء الحساب </button>
 
     </div>
     </div>
