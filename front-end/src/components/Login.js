@@ -1,21 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+
 function Login() {
-    const [userName, setUserName] = useState("")
+    const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate("")
+    
 
 
-    const loginUser=() =>{
-      axios.post ('API login', {
-          userName, password
-      }).then(res=>{
-          navigate("/")
+
+  const loginUser = () => {
+    axios
+      .post(`http://127.0.0.1:8000/Users/login`, {
+        username,
+        password
+       })
+      .then((res) => {
+        
+        if (res.status === 200) {
+          localStorage.setItem("token", res.data.token);
+          navigate("/");
+          window.location.reload()
+        }
       })
-
-  }
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
 
   return (

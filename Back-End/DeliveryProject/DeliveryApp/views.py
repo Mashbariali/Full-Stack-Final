@@ -4,10 +4,10 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
-from .models import NewDelegate,Order,AppRating,DelegateRating
+from .models import NewDelegate,Order,AppRating,DelegateRating,CancellingOrder
 from rest_framework.permissions import IsAdminUser
 
-from .serializers import NewDelegateSerializer,OrderSerializer,AppRatingSerializer,DelegateRatingSerializer
+from .serializers import NewDelegateSerializer,OrderSerializer,AppRatingSerializer,DelegateRatingSerializer,CancellingOrderSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
@@ -18,7 +18,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 def add_Delegate(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to add New Delegate ..."}, status=status.HTTP_401_UNAUTHORIZED)
-
+    request.data.update(user=request.user.id)
     NewDelegate = NewDelegateSerializer(data=request.data)
     if NewDelegate.is_valid():
         NewDelegate.save()
@@ -252,6 +252,26 @@ def delete_DelegateRating(request: Request, DelegateRating_id):
 
      return Response({"msg": "bad request, cannot delete other Rating "}, status=status.HTTP_401_UNAUTHORIZED)
     
+# .
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+#@permission_classes([IsAuthenticated])
+def Cancelling_Order(request: Request):
+    if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
+        return Response({"msg": "Sorry, Not Allowed to Cancelling Order ..."}, status=status.HTTP_401_UNAUTHORIZED)
+
+    cancelling = CancellingOrderSerializer(data=request.data)
+    if cancelling.is_valid():
+        cancelling.save()
+        dataResponse = {
+            "msg": "Thank you for record this form...",
+            "cancelling Order": cancelling.data
+        }
+        return Response(dataResponse)
+    else:
+        print(NewDelegate.errors)
+        dataResponse = {"msg": "Sorry, couldn't Cancelling The Order..."}
+        return Response(dataResponse, status=status.HTTP_400_BAD_REQUEST)
 
 
 

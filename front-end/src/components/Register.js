@@ -18,29 +18,46 @@ function Register() {
 
 }, [])
 
-const checkMatchPassword = (e) =>{
-  if (password != e.target.value)
+const checkMatchPassword = () =>{
+  if (password !== rePassword)
   {
     setPasswordIsMatched(true)
   }
 
   else 
   {
+    setPasswordIsMatched(false)
+    RegisterUser()
   }
   
 }
 
 
 
-const RegisterUser=() =>{
-  axios.post ('API login', {
-      firstName, lastName, userName, password, email
-  }).then(res=>{
-      navigate("/")
-  })
+// const RegisterUser=() =>{
+//   axios.post ('http://127.0.0.1:8000/Users/register', {
+//     body: JSON.stringify({
+//       first_name, last_name, username, password, email
+//   })
+    
+//   }).then(res=>{
+//       navigate("/")
+//   })
 
 
-}
+const RegisterUser = () => {
+  axios
+    .post(`http://127.0.0.1:8000/Users/register`, {
+       first_name, last_name, username, password, email
+      
+    })
+    .then((res) => {
+      console.log(res);
+      console.log(first_name, last_name, username, password, email)
+      navigate("/");
+    })
+ 
+  }
 
   return (
     <div className='container d-flex justify-content-center align-items-center'>
@@ -54,10 +71,10 @@ const RegisterUser=() =>{
         <input className="form-control mt-3 mb-2" type="text" placeholder='اسم المستخدم' onChange={(e)=> {setUserName(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="email" placeholder='البريد الالكتروني' onChange={(e)=> {setEmail(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="password" placeholder='كلمة المرور' onChange={(e)=> {setPassword(e.target.value);}}></input>
-        <input className="form-control mt-3 mb-2" type="password" placeholder='اعد كتابة كلمة المرور' onChange={checkMatchPassword}></input>
+        <input className="form-control mt-3 mb-2" type="password" placeholder='اعد كتابة كلمة المرور' onChange={(e)=> {setRePassword(e.target.value);}}></input>
 
 
-        <button className="btn btn-primary mt-2" onClick={RegisterUser}>انشاء الحساب </button>
+        <button className="btn btn-primary mt-2" onClick={checkMatchPassword}>انشاء الحساب </button>
 
     </div>
     </div>
