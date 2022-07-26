@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button } from 'react-bootstrap';
 import {Link } from "react-router-dom";
+import logo from '../images/logo.png'
 
 
 
@@ -21,7 +22,7 @@ function Header() {
         <Container>
           <Navbar.Brand className='' >
             <img 
-              src="https://www.freeiconspng.com/thumbs/delivery-icon/delivery-icon-7.png" width="60px" height="50px"
+              src={logo} width="100px" height="50px"
               alt='الشعار'
 
               className="d-inline-block align-top navpos " />

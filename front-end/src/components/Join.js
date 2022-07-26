@@ -13,14 +13,17 @@ function Join() {
 
 
     const token =localStorage.getItem("token")
-
-
 const join=() =>{
   axios.post ('http://127.0.0.1:8000/Delivery/add_Delegate', {
     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
 
+
   }).then(res=>{
 
+  },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+
+
+  }).then(res=>{
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
 
     alert('Successfully Login');
