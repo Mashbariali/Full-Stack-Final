@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 function Join() {
-    const [image,setImage] = useState('')
     const [name, setName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState("")
     const [IdNumber, setIdNumber] = useState("")
@@ -12,14 +11,6 @@ function Join() {
     const [DrivingLicense, setDrivingLicense] = useState("")
     const navigate = useNavigate("")
 
-
-    
-    const attachedImage = (e) => {
-        setImage(URL.createObjectURL(e.target.files[0]))
-        console.log(e)
-  
-      };
-
       
 
 
@@ -27,7 +18,7 @@ const join=() =>{
   axios.post ('API login', {
     name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
   }).then(res=>{
-    // alert('Successfully Login');
+    alert('Successfully Login');
     navigate("/")
   })
 
@@ -48,7 +39,6 @@ const join=() =>{
         <input className="form-control mt-3 mb-2" type="text" placeholder='رقم اللوحة' onChange={(e)=> {setCarInfo(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="file" placeholder='صورة السيارة'onChange={(e)=> {setCarImage(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="file" placeholder='رخصة قياده' onChange={(e)=> {setDrivingLicense(e.target.value);}}></input>
-         <img src={image} />
         <button className="btn btn-primary mt-2" onClick={join} >طلب الانضمام!</button>
       </div>
     </div>
