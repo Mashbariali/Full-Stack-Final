@@ -23,8 +23,9 @@ const Rating=() =>{
     // alert('Successfully Login');
     navigate("/")
   })
-
+  
 }
+  )}
   return (
     <div>
          <div className='container d-flex justify-content-center align-items-center'>
@@ -37,8 +38,6 @@ const Rating=() =>{
         <option value="3">راض</option>
         <option value="2">محايد</option>
         <option value="1">غير راض</option>
-
-
 
       </Form.Select>
         <label >ملاحظات</label>
