@@ -4,9 +4,9 @@ import axios from 'axios'
 import AlertPasswordMatch from './AlertPasswordMatch'
 
 function Register() {
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [userName, setUserName] = useState("")
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [username, setUserName] = useState("")
   const [password, setPassword] = useState("")
   const [rePassword, setRePassword] = useState("")
   const [email, setEmail] = useState("")
