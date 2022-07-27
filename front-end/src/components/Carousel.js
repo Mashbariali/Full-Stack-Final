@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -25,8 +26,8 @@ export default function Carousel() {
               <input type='text' class='inputt' placeholder='password'></input>
               
               <br></br>
-              <button className="btn btn-danger m-1 dbutton ">سجل الان</button>
-
+              {/* <button className="btn btn-danger m-1 dbutton ">سجل الان</button> */}
+              <Button className='btn btn-danger m-1 dbutton' a href='/' variant="danger" >انضم الان</Button>
               
               </div>
           <MDBCarouselElement className='carousel-img' src='https://cdn.dribbble.com/users/187444/screenshots/2928490/dribbble.gif' alt='...' />

@@ -32,7 +32,7 @@ function Header() {
           <Nav><Link to="/"className='me-2'>الصفحة الرئيسية</Link></Nav>
           <Nav><Link to="/addOrder"className='me-2'>اضافة طلب توصيل</Link></Nav>
           <Nav><Link to="/list-orders"className='me-2'>استعراض الطلبات</Link></Nav>
-          <Nav><Link to="/join"className='me-2'>الانضمام</Link></Nav>
+          {/* <Nav><Link to="/join"className='me-2'>الانضمام</Link></Nav> */}
                {/* <Button className='userbuttom me-3 log1' a href='/register' variant="outline-info" >تسجيل </Button> */}
                 <Button className='userbuttom mr-5 ' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
               <Button className='userbuttom mr-3' a href='/' variant="outline-danger" >تسجيل الخروج</Button>
