@@ -37,7 +37,7 @@ console.log(token);
   },[]);
   return (
     data.map((item)=>(
-    <div className='mt-5 col d-flex justify-content-center'>
+    <div className='mt-5 col d-flex justify-content-center animate__animated animate__fadeIn'>
     
 
     <Card className="text-center">
