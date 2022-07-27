@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import AlertIncorrectInfo from './AlertIncorrectInfo'
 import axios from 'axios'
 
 
 function Login() {
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
+    const [incorrectInfo, setIncorrectInfo] = useState(false);
     const navigate = useNavigate("")
     
 
@@ -13,7 +15,7 @@ function Login() {
 
   const loginUser = () => {
     axios
-      .post(`http://127.0.0.1:8000/Users/login`, {
+      .post(`https://wasllha2022-django.herokuapp.com/Users/login`, {
         username,
         password
        })
@@ -27,6 +29,7 @@ function Login() {
       })
       .catch((err) => {
         console.log(err);
+        setIncorrectInfo(true)
       });
   };
 
@@ -35,6 +38,9 @@ function Login() {
     <div className='container d-flex justify-content-center align-items-center'>
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">تسجيل الدخول</h1>
+        {incorrectInfo &&
+          <AlertIncorrectInfo  />
+        }
         <input className="form-control mt-3 mb-2" placeholder='اسم المستخدم' onChange={(e) =>{setUserName(e.target.value)}}></input>
         <input className="form-control mt-3 mb-2" type="password" placeholder='كلمة المرور' onChange={(e) =>{setPassword(e.target.value)}}></input>
 
