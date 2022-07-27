@@ -35,7 +35,7 @@ function AddOrder() {
 
   return (
     <div>
-      <div className='container addOrder'>
+      <div className='container addOrder animate__animated animate__backInUp'>
         <label >حجم الطرد</label>
         <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
         <option value="غير محدد">قم باالإختيار</option>
@@ -56,7 +56,6 @@ function AddOrder() {
       <label >من مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setFromWhichCity(e.target.value)}>
         <option value="غير محدد">قم باالإختيار</option>
-        <option value="الرياض">...</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>
@@ -75,7 +74,6 @@ function AddOrder() {
       <label >الى مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setToWhichCity(e.target.value)}>
         <option value="غير محدد">قم باالإختيار</option>
-        <option value="الرياض">...</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>

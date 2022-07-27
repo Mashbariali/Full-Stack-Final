@@ -13,9 +13,51 @@ function AboutSite() {
         <br></br>
         {/* Card Bootstrap  */}
         <div className='container' >
-   
-    
+    <center>
+      <h1>لماذا أصبح عميل؟</h1>
+      </center>
         <hr></hr>
+        <div class="card-group m-1">
+  <div class="card m-1 border border-light">
+    <img src="https://drive.careem.com/assets/images/landing/be_own_boss_icn.svg" class="card-img-top" alt="..."/>
+    <div class="card-body animate__animated animate__bounce">
+      <h5 class="card-title">الاستقلالية</h5>
+      <p class="card-text">أعمل وقت مايناسبك في المكان اللي يناسبك</p>
+    </div>
+  </div>
+
+  
+  
+  
+  <div class="card m-1 border border-light">
+    <img src="https://drive.careem.com/assets/images/landing/make_your_own_money_icn.svg" class="card-img-top" alt="..."/>
+    <div class="card-body animate__animated animate__bounce">
+      <h5 class="card-title">زيادة دخل</h5>
+      <p class="card-text">استمرار حاجة العميل لك يعني استمرار حصولك على دخل ثابت</p>
+    </div>
+  </div>
+  <div class="card m-1 border border-light">
+    <img src="https://drive.careem.com/assets/images/landing/control_life_icn.svg" class="card-img-top" alt="..."/>
+    <div class="card-body animate__animated animate__bounce">
+      <h5 class="card-title">تحكم بحياتك </h5>
+      <p class="card-text">كن مسؤولاً عن عملك وحقق أهدافك بشروطك</p>
+    </div>
+  </div>
+</div>
+
+<hr></hr>
+<br></br>
+
+<center class='whatWait'>
+    <div className='container'>
+        <h1>ايش تنتظر؟ </h1>
+        <Button className='btn btn-danger m-1 dbutton' a href='/login' variant="danger" > سجل الأن</Button>
+              
+    </div>
+    </center>
+
+        <hr></hr>
+        <br></br>
      
     <div className='container cardGroup border border-light '>
     <h1 class="text-center ">لماذا أصبح مندوب؟</h1>
@@ -50,6 +92,15 @@ function AboutSite() {
 <br></br>
 <br></br>
 <hr></hr>
+<center class='whatWait'>
+    <div className='container'>
+        <h1>ايش تنتظر؟ </h1>
+        <Button className='btn btn-danger m-1 dbutton' a href='/join' variant="danger" >انضم الان</Button>
+              
+    </div>
+    </center>
+    <br></br>
+    <hr></hr>
 <div className='container questions'>
      
      <div className='container cardGroup border  '>
@@ -82,13 +133,7 @@ function AboutSite() {
 
 
     </div>
-    <center class='whatWait'>
-    <div className='container'>
-        <h1>ايش تنتظر؟ </h1>
-        <Button className='btn btn-danger m-1 dbutton' a href='/join' variant="danger" >انضم الان</Button>
-              
-    </div>
-    </center>
+   
     
     </div>
     </div>
