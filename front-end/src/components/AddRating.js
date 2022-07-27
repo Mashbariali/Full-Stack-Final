@@ -17,15 +17,13 @@ const Rating=() =>{
   axios.post ('https://wasllha2022-django.herokuapp.com/Delivery/add_DelegateRating', {
     rate, Description
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
-  axios.post ('API Rating endpoint', {
-    rate, Description
   }).then(res=>{
     // alert('Successfully Login');
     navigate("/")
   })
   
 }
-  )}
+
   return (
     <div>
          <div className='container d-flex justify-content-center align-items-center'>
