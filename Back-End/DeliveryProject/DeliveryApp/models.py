@@ -50,6 +50,7 @@ class Order(models.Model):
     ToWhichCity = models.CharField(max_length=50,choices=CHOICES2)
     DeliveryTime = models.CharField(max_length=50,choices=CHOICES3)
     Description = models.TextField()
+    date= models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
