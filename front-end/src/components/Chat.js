@@ -24,7 +24,7 @@ function Chat() {
   const submit = async e => {
       e.preventDefault();
 
-      await fetch('http://127.0.0.1:8000/Chat/mesaages', {
+      await fetch('https://wasllha2022-django.herokuapp.com/Chat/mesaages', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
