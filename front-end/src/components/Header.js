@@ -32,7 +32,7 @@ function Header() {
   return (
     <>
      
-    <div className='container sticky-top'>
+    <div className='container sticky-top '>
       <Navbar variant="dark" className='MyNav sticky-top Navbar fixed-top '>
 
 
@@ -52,10 +52,10 @@ function Header() {
           {/* <Nav><Link to="/join"className='me-2'>الانضمام</Link></Nav> */}
           {/* <Button className='userbuttom me-3 log1' a href='/register' variant="outline-info" >تسجيل </Button> */}
           {isLogin ? (
-            <Button className='userbuttom mr-3' a href='/' variant="outline-danger" onClick={logout}>تسجيل الخروج</Button>
+            <Button className='userbuttom mr-3' a href='/' onClick={logout}>تسجيل الخروج</Button>
           ) : (
-            <Button className='userbuttom mr-5 ' a href='/login' variant="outline-info" >تسجيل الدخول</Button>
-          )}
+            <Nav><Link to="/login"className='me-2'>تسجيل الدخول</Link></Nav>
+            )}
        </Nav>
         </Container>
       </Navbar>

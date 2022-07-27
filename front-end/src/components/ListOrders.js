@@ -13,6 +13,7 @@ function ListOrders() {
   // const [DeliveryTime, setDeliveryTime] = useState();
   // const [Description, setDescription] = useState();
   const [data, setData] = useState([])
+  
 
 
   const token =localStorage.getItem("token")
@@ -28,6 +29,7 @@ console.log(token);
     axios(config).then(res=>{
     console.log(res.data.Order);
     setData(res.data.Order )
+
   
       // alert('Successfully Login');
       // navigate("/")
@@ -37,7 +39,7 @@ console.log(token);
   },[]);
   return (
     data.map((item)=>(
-    <div className='mt-5 col d-flex justify-content-center'>
+    <div className='mt-5 col d-flex justify-content-center animate__animated animate__fadeIn'>
     
 
     <Card className="text-center">
@@ -55,9 +57,9 @@ console.log(token);
           ملاحظات: {item.Description}
           </p>
         </Card.Text>
-        <Button variant="primary" href='/chatt'>قبول الطلب</Button>
+        <Button variant="primary" href='/chat'>قبول الطلب</Button>
       </Card.Body>
-      <Card.Footer className="text-muted">تاريخ الطلب</Card.Footer>
+      <Card.Footer className="text-muted">{item.date.slice()}تاريخ الطلب</Card.Footer>
     </Card>
   </div>
   ))
