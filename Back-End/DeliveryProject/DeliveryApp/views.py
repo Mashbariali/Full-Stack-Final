@@ -127,12 +127,11 @@ def add_Order(request: Request):
 #Only the Delegate can list the orders.
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def list_Orders(request: Request):
-    if not request.user.is_authenticated: #or not request.user.has_perm('DeliveryApp.view_order'):
+    if not request.user.is_authenticated or not request.user.has_perm('DeliveryApp.view_order'):
         return Response({"msg": "Not Allowed"}, status=status.HTTP_401_UNAUTHORIZED)
     request.data.update(user=request.user.id)
-
     order = Order.objects.all()
     dataResponse = {
         "msg": "New Order Add",

@@ -14,7 +14,7 @@ function AddRating() {
 
 const Rating=() =>{
 
-  axios.post ('https://wasllha2022-django.herokuapp.com/Delivery/add_DelegateRating', {
+  axios.post ('http://127.0.0.1:8000/Delivery/add_DelegateRating', {
     rate, Description
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
   }).then(res=>{

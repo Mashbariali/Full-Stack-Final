@@ -37,13 +37,13 @@ console.log(token);
   },[]);
   return (
     data.map((item)=>(
-    <div className=' col d-flex justify-content-center'>
+    <div className='mt-5 col d-flex justify-content-center animate__animated animate__fadeIn'>
     
 
     <Card className="text-center">
-      <Card.Header>Featured</Card.Header>
+      <Card.Header>{item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Header>
       <Card.Body>
-        <Card.Title>{item.FromWhichCity} <p className='inline'>الى</p> {item.ToWhichCity}</Card.Title>
+        <Card.Title></Card.Title>
         <Card.Text>
           <p>
           الحجم: {item.PackageType}

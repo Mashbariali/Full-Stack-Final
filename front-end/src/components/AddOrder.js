@@ -24,7 +24,7 @@ function AddOrder() {
    axios.post (' https://wasllha2022-django.herokuapp.com/Delivery/add_Order', {
     PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
-     alert('Successfully Login');
+     alert('تم إرسال طلبكم');
      navigate("/")
    })
  
@@ -35,9 +35,10 @@ function AddOrder() {
 
   return (
     <div>
-      <div className='container addOrder'>
+      <div className='container addOrder animate__animated animate__backInUp'>
         <label >حجم الطرد</label>
         <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
+        <option value="غير محدد">قم باالإختيار</option>
         <option value="طرد صغير">صغير</option>
         <option value="طرد متوسط">وسط</option>
         <option value="طرد كبير">كبير</option>
@@ -46,6 +47,7 @@ function AddOrder() {
       </Form.Select>
       <label >التوصيل خلال مدة:</label>
         <Form.Select size="sm" onChange={(e) => setDeliveryTime(e.target.value)}>
+        <option value="غير محدد">قم باالإختيار</option>
         <option value="0-5h">من 0-5 ساعة</option>
         <option value="6-12h">من 6-12 ساعة</option>
         <option value="+12">اكثر من 12 ساعة</option>
@@ -53,6 +55,7 @@ function AddOrder() {
 
       <label >من مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setFromWhichCity(e.target.value)}>
+        <option value="غير محدد">قم باالإختيار</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>
@@ -70,6 +73,7 @@ function AddOrder() {
 
       <label >الى مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setToWhichCity(e.target.value)}>
+        <option value="غير محدد">قم باالإختيار</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>
@@ -90,7 +94,9 @@ function AddOrder() {
 
 </div>  
 <center><button className="btn btn-primary mt-2 addOrderButton" onClick={SendOrder}>ارسال الطلب</button>
-</center> </div>
+</center> 
+
+</div>
   )
 }
 

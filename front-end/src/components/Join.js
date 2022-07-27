@@ -5,11 +5,11 @@ import AlertIncorrectInfo from './AlertIncorrectInfo'
 
 function Join() {
     const [name, setName] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState("")
+    const [PhoneNumber, setPhoneNumber] = useState("")
     const [IdNumber, setIdNumber] = useState("")
-    const [psersonImage, setPersonImage] = useState("")
-    const [carInfo, setCarInfo] = useState("")
-    const [carImage, setCarImage] = useState("")
+    const [PsersonImage, setPersonImage] = useState("")
+    const [CarInfo, setCarInfo] = useState("")
+    const [CarImage, setCarImage] = useState("")
     const [DrivingLicense, setDrivingLicense] = useState("")
     const [incorrectInfo, setIncorrectInfo] = useState(false);
 
@@ -21,10 +21,10 @@ function Join() {
     const token =localStorage.getItem("token")
 const join=() =>{
   axios.post ('https://wasllha2022-django.herokuapp.com/Delivery/add_Delegate', {
-    name,phoneNumber,IdNumber,psersonImage,carInfo,carImage,DrivingLicense
+    name,PhoneNumber,IdNumber,PsersonImage,CarInfo,CarImage,DrivingLicense
 },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
 
-    alert('Successfully Login');
+    alert('تم ارسال طلبكم');
     navigate("/")
   })
   .catch((err) => {
@@ -42,7 +42,9 @@ const join=() =>{
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">نموذج الانضمام الى فريق التوصيل</h1>
         <h3 className="text-center py-5 mc-5 ">طلبات الانضمام يتم مراجعتها والموافقة عليها خلال 24 ساعة عمل</h3>
-
+        {incorrectInfo &&
+          <AlertIncorrectInfo  />
+        }
         <label >الاسم</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setName(e.target.value);}}></input>
         <label >رقم الجوال</label>
