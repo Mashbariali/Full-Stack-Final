@@ -249,9 +249,11 @@ html {
   position: absolute;
 } */
 .islogin{
-  background-color: rgb(136, 65, 65) !important;
-  border: 1px solid rgb(136, 65, 65) !important;
-
+  /* background-color: rgb(136, 65, 65) !important; */
+  /* border: 1px solid rgb(136, 65, 65) !important; */
+  /* background-color: rgb(48, 48, 48) !important; */
+  background: rgba(139, 0, 0, 0.536) !important;
+  
 }
 
 .MyNav{
