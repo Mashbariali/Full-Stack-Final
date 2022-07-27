@@ -1,7 +1,20 @@
-import React from 'react'
+import {React, useState, useEffect} from 'react'
 import { Button } from 'react-bootstrap'
 // import { Container } from 'react-bootstrap'
 function AboutSite() {
+  const [isLogin, setIsLogin] = useState(true)
+
+  useEffect(() => {
+    if (localStorage["token"]){
+      setIsLogin(true)
+    }
+    else {
+      setIsLogin(false)
+    }
+  
+
+}, [isLogin])
+
   return (
     <div>
 
@@ -13,9 +26,9 @@ function AboutSite() {
         <br></br>
         {/* Card Bootstrap  */}
         <div className='container' >
-    <center>
+      { !isLogin &&
+      <>
       <h1>لماذا أصبح عميل؟</h1>
-      </center>
         <hr></hr>
         <div class="card-group m-1">
   <div class="card m-1 border border-light">
@@ -59,6 +72,8 @@ function AboutSite() {
         <hr></hr>
         <br></br>
      
+        </>
+     }
     <div className='container cardGroup border border-light '>
     <h1 class="text-center ">لماذا أصبح مندوب؟</h1>
         
