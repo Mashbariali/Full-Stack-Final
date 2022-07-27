@@ -32,7 +32,7 @@ function Header() {
   return (
     <>
      
-    <div className='container sticky-top'>
+    <div className='container sticky-top '>
       <Navbar variant="dark" className='MyNav sticky-top Navbar fixed-top '>
 
 
