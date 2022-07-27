@@ -21,7 +21,7 @@ function AddOrder() {
 
 
  const SendOrder=() =>{
-   axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
+   axios.post (' https://wasllha2022-django.herokuapp.com/Delivery/add_Order', {
     PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
      alert('Successfully Login');
