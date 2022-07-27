@@ -35,6 +35,7 @@ function AddOrder() {
 
   return (
     <div>
+      <div className='container addOrder'>
         <label >حجم الطرد</label>
         <Form.Select size="sm" onChange={(e) => setPackageType(e.target.value)}>
         <option value="طرد صغير">صغير</option>
@@ -87,8 +88,9 @@ function AddOrder() {
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
 
-            <button className="btn btn-primary mt-2" onClick={SendOrder}>ارسال الطلب</button>
-    </div>
+</div>  
+<center><button className="btn btn-primary mt-2 addOrderButton" onClick={SendOrder}>ارسال الطلب</button>
+</center> </div>
   )
 }
 

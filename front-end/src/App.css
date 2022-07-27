@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap');
 body {
-  background-color: #fff !important;
+  background-color: whitesmoke !important;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -42,7 +42,7 @@ html {
   height: 100%;
 }
 .carousel{
-  opacity: 0.8;
+  /* opacity: 0.8; */
   background-size: cover !important;
 }
 
@@ -99,8 +99,32 @@ html {
     border-radius: 9px 60px;
     text-shadow: #76838f !important;
     opacity: 0.6 !important;
-
+    box-shadow: 10px 10px 5px rgba(149, 81, 81, 0.46), 19px 10px 5px rgba(149, 81, 81, 0.46)  !important;
+    /* 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; */
+    
   }
+  .carsouleLoginMessage{
+    
+    position: absolute;
+    color: #1b3131;
+    top: 60px;
+    z-index: 0;
+    border-radius: 1px !important;
+    background-color: whitesmoke;
+    left: 4px;
+    /* z-index: 0 !important; */
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 0.1px solid darkslategrey !important;
+    padding:19px;
+    /* border-radius: 9px 60px; */
+    text-shadow: #76838f !important;
+    opacity: 0.6 !important;
+    box-shadow: 10px 10px 5px rgba(149, 81, 81, 0.46), 19px 10px 5px rgba(149, 81, 81, 0.46)  !important;
+    }
+
+  
   .log3{
     position: absolute;
 
@@ -146,8 +170,9 @@ html {
 }
 
 .btnLoginNow{
-  width: 32%;
+  width: 16%;
   margin: 18px ;
+  border: 1px solid #ccc !important;
   margin: 0 !important;
   background-color: rgb(175, 16, 16) !important;
 }
@@ -162,3 +187,31 @@ html {
   /* z-index:  !important; */
 }
 
+.questions{
+  /* box-shadow: 10px 10px 5px rgba(149, 81, 81, 0.46) !important; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+
+  padding: 40px 50px;
+
+}
+.addOrder{
+  border: 1px solid black;
+  padding: 2px;
+}
+.addOrderButton{
+  width: 20%;
+}
+.selectCity{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.dbutton{
+  width: 30%;
+  margin: 10px !important;
+  padding: 14px !important;
+}
+.inputt{
+  margin: 2px;
+  width: 50%;
+}
