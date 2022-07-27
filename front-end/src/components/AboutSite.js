@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 // import { Container } from 'react-bootstrap'
 function AboutSite() {
   return (
@@ -84,7 +85,8 @@ function AboutSite() {
     <center class='whatWait'>
     <div className='container'>
         <h1>ايش تنتظر؟ </h1>
-        <button type="button" class="btn btn-success btnLoginNow">سجل الأن</button>
+        <Button className='btn btn-danger m-1 dbutton' a href='/join' variant="danger" >انضم الان</Button>
+              
     </div>
     </center>
     
