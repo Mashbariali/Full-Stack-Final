@@ -1,7 +1,7 @@
 import React from 'react'
+import './css/ChatStyle.css'
 import {useEffect, useState} from "react";
 import Pusher from "pusher-js";
-import './css/ChatStyle.css'
 
 function Chatt() {
 
@@ -42,6 +42,7 @@ function Chatt() {
 
 
 
+
   return (
     <div>
         
@@ -65,29 +66,31 @@ function Chatt() {
           </div>
           <div class="chat-body">
             <div class="chat-content">
-              <p>
-              {message.username}
-                <br/>{message.message}
+              <p value={username}
+                         onChange={e => setUsername(e.target.value)}>
+               <div className="list-group list-group-flush border-bottom scrollarea">
+                  {messages.map(message => {
+                      return (
+                          <div className="list-group-item list-group-item-action py-3 lh-tight">
+                              <div className="d-flex w-100 align-items-center justify-content-between">
+                                  <strong className="mb-1">{message.username}</strong>
+                              </div>
+                              <div className="col-10 mb-1 small">{message.message}</div>
+                          </div>
+                      )
+                  })}
+              </div>
+
               </p>
               <time class="chat-time" datetime="2015-07-01T11:37">11:37:08 am</time>
             </div>
           </div>
         </div>
-        <div class="chat chat-left">
-          <div class="chat-avatar">
-            <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="Edward Fletcher">
-              <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="..."/>
-              <i></i>
-            </a>
-          </div>
-          <div class="chat-body">
-            <div class="chat-content">
-              <p>Well, I am just looking around.</p>
-              <time class="chat-time" datetime="2015-07-01T11:39">11:39:57 am</time>
-            </div>
-          </div>
-        </div>
-        <div class="chat">
+        
+
+
+
+        {/* <div class="chat">
           <div class="chat-avatar">
             <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="June Lane">
               <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..."/>
@@ -102,23 +105,27 @@ function Chatt() {
               <time class="chat-time" datetime="2015-07-01T11:40">11:40:10 am</time>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
       </div>
     </div>
-    <div class="panel-footer">
+    {/* <div class="panel-footer">
       <form>
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Say something"/>
           <span class="input-group-btn">
-          <form onSubmit={e => submit(e)}>
+            <button class="btn btn-primary" type="button">Send</button>
+          </span>
+        </div>
+      </form>
+    </div> */}
+
+<form onSubmit={e => submit(e)}>
               <input className="form-control" placeholder="اكتب رسالتك هنا .." value={message}
                      onChange={e => setMessage(e.target.value)}
               />
           </form>
-          </span>
-        </div>
-      </form>
-    </div>
   </div>
  
 </div>
@@ -129,3 +136,5 @@ function Chatt() {
 }
 
 export default Chatt
+
+

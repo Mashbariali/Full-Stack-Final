@@ -49,7 +49,7 @@ const checkMatchPassword = () =>{
 
 const RegisterUser = () => {
   axios
-    .post(`https://wasllha2022-django.herokuapp.com/register`, {
+    .post(`https://wasllha2022-django.herokuapp.com/Users/register`, {
        first_name, last_name, username, password, email
       
     })
