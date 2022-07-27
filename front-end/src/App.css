@@ -211,10 +211,13 @@ html {
 }
 .dbutton{
   width: 30%;
+  z-index: -1;
   margin: 10px !important;
   padding: 14px !important;
 }
 .inputt{
   margin: 2px;
   width: 50%;
+
 }
+
