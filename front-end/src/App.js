@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Chat from './components/Chat'
 import AddOrder from './components/AddOrder';
 import AddRating from './components/AddRating'
+import CancelOrder from './components/CancleOrder'
 function App() {
 
   return (
@@ -30,6 +31,8 @@ function App() {
             {/* <Route path='/orders'              element={< Orders />}></Route> */}
             <Route path='/addOrder'                   element={< AddOrder />}></Route>
             <Route path='/addRating'                   element={< AddRating />}></Route>
+            <Route path='/cancelOrder'                   element={< CancelOrder />}></Route>
+
 
 
             </Route>

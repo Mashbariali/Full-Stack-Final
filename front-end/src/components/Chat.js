@@ -63,6 +63,10 @@ function Chat() {
                      onChange={e => setMessage(e.target.value)}
               />
           </form>
+
+          <a href='/addRating' className='text-center mt-5'>إنهاء الطلب</a>
+          <a href='/cancelOrder' className='text-center mb-5'>الغاء الطلب</a>
+
       </div>
   );
 }
