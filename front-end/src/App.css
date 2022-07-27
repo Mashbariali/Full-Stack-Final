@@ -250,3 +250,51 @@ html {
 /* .list-group{
   position: absolute;
 } */
+
+.MyNav{
+  text-decoration: none !important;
+  
+}
+a{
+  /* text-decoration: underline; */
+  text-decoration-line: none !important;
+  color: white !important;
+  padding: 3px;
+  background-color: rgb(48, 48, 48);
+  /* background-color: rgb(94, 64, 8); */
+  margin: 3px;
+  transition: 0.5;
+  border-radius: 7px;
+
+}
+a:hover{
+  background-color: rgb(26, 23, 23);
+  color:rgb(13, 19, 19);
+  transition: 0.5;
+}
+.carousel-img{
+  background-size: cover !important;
+}
+.carouselText{
+  position: absolute;
+  color: #1b3131;
+  top: 40px;
+  right: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  border: 3px solid darkslategrey !important;
+  padding:9px;
+  border-radius: 9px 60px;
+  text-shadow: #76838f !important;
+  opacity: 0.6 !important;
+
+}
+
+.scrollarea {
+min-height: 500px;
+}
+.card_order{
+  margin: 8px;
+  color:rgb(13, 19, 19)
+}
