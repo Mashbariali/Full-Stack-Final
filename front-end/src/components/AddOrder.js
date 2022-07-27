@@ -24,7 +24,7 @@ function AddOrder() {
    axios.post (' http://127.0.0.1:8000/Delivery/add_Order', {
     PackageType, FromWhichCity, ToWhichCity, DeliveryTime, Description
    },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
-     alert('Successfully Login');
+     alert('تم إرسال طلبكم');
      navigate("/")
    })
  
@@ -53,6 +53,7 @@ function AddOrder() {
 
       <label >من مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setFromWhichCity(e.target.value)}>
+        <option value="الرياض">...</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>
@@ -70,6 +71,7 @@ function AddOrder() {
 
       <label >الى مدينة:</label>
         <Form.Select size="sm" onChange={(e) => setToWhichCity(e.target.value)}>
+        <option value="الرياض">...</option>
         <option value="الرياض">الرياض</option>
         <option value="مكة">مكة</option>
         <option value="الدمام">الدمام</option>
@@ -90,7 +92,9 @@ function AddOrder() {
 
 </div>  
 <center><button className="btn btn-primary mt-2 addOrderButton" onClick={SendOrder}>ارسال الطلب</button>
-</center> </div>
+</center> 
+
+</div>
   )
 }
 
