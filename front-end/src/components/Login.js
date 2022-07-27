@@ -45,7 +45,8 @@ function Login() {
         <input className="form-control mt-3 mb-2" type="password" placeholder='كلمة المرور' onChange={(e) =>{setPassword(e.target.value)}}></input>
 
         <button className="btn btn-primary mt-2" onClick={loginUser}>تسجيل الدخول</button>
-        <a href='/register' className='text-center mb-5 mt-4'>إنشاء حساب ؟ </a>
+        <label className='mt-3' >غير مسجل ؟ سجل الآن</label>
+        <a href='/register' className='text-center mb-5'>إنشاء حساب  </a>
         </div>
         </div>
   )
