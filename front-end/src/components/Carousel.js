@@ -65,7 +65,7 @@ export default function Carousel() {
             )}
 
 
-          <MDBCarouselElement className='carousel-img' src='https://cdn.dribbble.com/users/187444/screenshots/2928490/dribbble.gif' alt='...' />
+          <MDBCarouselElement className='carousel-img' src='https://c.neh.tw/thumb/f/720/m2i8H7H7N4d3N4i8.jpg' alt='...' />
           
         </MDBCarouselItem>
       </MDBCarouselInner>

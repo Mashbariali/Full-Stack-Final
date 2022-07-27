@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AlertIncorrectInfo from './AlertIncorrectInfo'
 import axios from 'axios'
+import AlertLogiedSucc from './AlertLogiedSucc'
 
 
 function Login() {
     const [username, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [incorrectInfo, setIncorrectInfo] = useState(false);
+    const [logiedSucc, setLogiedSucc] = useState(false);
     const navigate = useNavigate("")
     
 
@@ -22,6 +24,7 @@ function Login() {
       .then((res) => {
         
         if (res.status === 200) {
+          setLogiedSucc(true)
           localStorage.setItem("token", res.data.token);
           navigate("/");
           window.location.reload()
@@ -37,6 +40,9 @@ function Login() {
   return (
     <div className='container d-flex justify-content-center align-items-center'>
       <div className="col-md-6 mx-auto d-flex flex-column ">
+        {logiedSucc &&
+          <AlertLogiedSucc />
+        }
         <h1 className="text-center py-5 mc-5 ">تسجيل الدخول</h1>
         {incorrectInfo &&
           <AlertIncorrectInfo  />
