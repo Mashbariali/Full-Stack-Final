@@ -42,7 +42,9 @@ const join=() =>{
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">نموذج الانضمام الى فريق التوصيل</h1>
         <h3 className="text-center py-5 mc-5 ">طلبات الانضمام يتم مراجعتها والموافقة عليها خلال 24 ساعة عمل</h3>
-
+        {incorrectInfo &&
+          <AlertIncorrectInfo  />
+        }
         <label >الاسم</label>
         <input className="form-control mt-2 mb-3" type="text" onChange={(e)=> {setName(e.target.value);}}></input>
         <label >رقم الجوال</label>
