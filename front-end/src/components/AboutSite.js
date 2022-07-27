@@ -25,17 +25,19 @@ function AboutSite() {
         <br></br>
         <br></br>
         {/* Card Bootstrap  */}
-        <div className='container' >
+        <div className='container text-dark' >
       { !isLogin &&
       <>
+      <center>
       <h1>لماذا أصبح عميل؟</h1>
+      </center>
         <hr></hr>
         <div class="card-group m-1">
   <div class="card m-1 border border-light">
-    <img src="https://drive.careem.com/assets/images/landing/be_own_boss_icn.svg" class="card-img-top" alt="..."/>
+    <img src="https://gogeticon.net/files/233668/62c96bcef18a9d1d3ad2d4015490f3be.png" class="card-img-top" alt="..."/>
     <div class="card-body animate__animated animate__bounce">
-      <h5 class="card-title">الاستقلالية</h5>
-      <p class="card-text">أعمل وقت مايناسبك في المكان اللي يناسبك</p>
+      <h5 class="card-title">السرعة</h5>
+      <p class="card-text">طلبك  معنا يوصل اسرررع شي</p>
     </div>
   </div>
 
@@ -43,17 +45,18 @@ function AboutSite() {
   
   
   <div class="card m-1 border border-light">
-    <img src="https://drive.careem.com/assets/images/landing/make_your_own_money_icn.svg" class="card-img-top" alt="..."/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQARa52WQxkD_ixrbRAVXmgqnH_W59Z6iohvA&usqp=CAU" class="card-img-top" alt="..."/>
     <div class="card-body animate__animated animate__bounce">
-      <h5 class="card-title">زيادة دخل</h5>
-      <p class="card-text">استمرار حاجة العميل لك يعني استمرار حصولك على دخل ثابت</p>
+      <h5 class="card-title">الأمان</h5>
+      <p class="card-text">شحنتك في ايدي امينة</p>
     </div>
   </div>
+  
   <div class="card m-1 border border-light">
-    <img src="https://drive.careem.com/assets/images/landing/control_life_icn.svg" class="card-img-top" alt="..."/>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReOW3y0PVkI03u1bWWsrpuSjuwyDOAI-QSiQ&usqp=CAU" class="card-img-top" alt="..."/>
     <div class="card-body animate__animated animate__bounce">
-      <h5 class="card-title">تحكم بحياتك </h5>
-      <p class="card-text">كن مسؤولاً عن عملك وحقق أهدافك بشروطك</p>
+      <h5 class="card-title">السعر </h5>
+      <p class="card-text">السعر والجودة الافضل</p>
     </div>
   </div>
 </div>
@@ -126,20 +129,20 @@ function AboutSite() {
   
      <div class="card-body animate__animated animate__bounce">
        <h5 class="card-title">كيف اثق في المندوب؟</h5>
-       <p class="card-text">أعمل وقت مايناسبك في المكان اللي يناسبك</p>
+       <p class="card-text">تقدر تشوف معلومات المندوب وتقيماته</p>
      </div>
    </div>
    
    <div class="card m-1 border border-light">
      <div class="card-body animate__animated animate__bounce">
        <h5 class="card-title">كيف اضمن وصول الغرض؟</h5>
-       <p class="card-text">استمرار حاجة العميل لك يعني استمرار حصولك على دخل ثابت</p>
+       <p class="card-text">تقدر تتبع شحنتك الى مكان الوصول</p>
      </div>
    </div>
    <div class="card m-1 border border-light">
      <div class="card-body animate__animated animate__bounce">
        <h5 class="card-title">مدة التوصيل؟</h5>
-       <p class="card-text">كن مسؤولاً عن عملك وحقق أهدافك بشروطك</p>
+       <p class="card-text">اقصى مدة توصيل عندنا 24 ساعة</p>
      </div>
    </div>
  </div>

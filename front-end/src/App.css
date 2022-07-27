@@ -7,8 +7,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   font-family: 'Tajawal', sans-serif !important;
+  color: whitesmoke !important ;
  
 
 }
@@ -75,6 +75,7 @@ html {
     color:rgb(13, 19, 19) !important;
     transition: 5 !important;
     border-radius: 7px;
+
     padding: 5px !important;
 
 
@@ -119,7 +120,7 @@ html {
     display: flex;
     flex-direction: column;
     width: 30%;
-    border: 0.1px solid darkslategrey !important;
+    /* border: 0.1px solid darkslategrey !important; */
     padding:19px;
     /* border-radius: 9px 60px; */
     text-shadow: #76838f !important;
@@ -214,9 +215,6 @@ html {
   top: 50% !important;
   font-size: 22px;
   box-shadow: 2px 2px 2px rgba(149, 81, 81, 0.46), 4px 4px 6px rgba(149, 81, 81, 0.46)  !important;
-
-
-  
   padding: 2px;
 
 
@@ -250,6 +248,13 @@ html {
 /* .list-group{
   position: absolute;
 } */
+.islogin{
+  /* background-color: rgb(136, 65, 65) !important; */
+  /* border: 1px solid rgb(136, 65, 65) !important; */
+  /* background-color: rgb(48, 48, 48) !important; */
+  background: rgba(139, 0, 0, 0.536) !important;
+  
+}
 
 .MyNav{
   text-decoration: none !important;
@@ -298,3 +303,9 @@ min-height: 500px;
   margin: 8px;
   color:rgb(13, 19, 19)
 }
+
+
+/* .icon{
+ height: 220px;
+ width: 100px;
+} */

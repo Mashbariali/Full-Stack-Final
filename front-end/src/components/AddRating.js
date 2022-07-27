@@ -16,15 +16,13 @@ const Rating=() =>{
   axios.post ('http://127.0.0.1:8000/Delivery/add_DelegateRating', {
     rate, Description
   },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
-  axios.post ('API Rating endpoint', {
-    rate, Description
   }).then(res=>{
     alert('شكرا لتقييمك');
     navigate("/")
   })
   
 }
-  )}
+
   return (
     <div>
          <div className='container d-flex justify-content-center align-items-center'>
