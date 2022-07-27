@@ -1,7 +1,47 @@
 import React from 'react'
+import {useEffect, useState} from "react";
+import Pusher from "pusher-js";
 import './css/ChatStyle.css'
 
 function Chatt() {
+
+
+  const [username, setUsername] = useState('username');
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState('');
+  let allMessages = [];
+
+  useEffect(() => {
+      Pusher.logToConsole = true;
+
+      const pusher = new Pusher('c8930c2569cb857ff058', {
+          cluster: 'us2'
+      });
+
+      const channel = pusher.subscribe('chat');
+      channel.bind('message', function (data) {
+          allMessages.push(data);
+          setMessages(allMessages);
+      });
+  }, []);
+
+  const submit = async e => {
+      e.preventDefault();
+
+      await fetch('https://wasllha2022-django.herokuapp.com/Chat/mesaages', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+              username,
+              message
+          })
+      });
+
+      setMessage('');
+  }
+
+
+
   return (
     <div>
         
@@ -26,8 +66,8 @@ function Chatt() {
           <div class="chat-body">
             <div class="chat-content">
               <p>
-                Good morning, sir.
-                <br/>What can I do for you?
+              {message.username}
+                <br/>{message.message}
               </p>
               <time class="chat-time" datetime="2015-07-01T11:37">11:37:08 am</time>
             </div>
@@ -70,7 +110,11 @@ function Chatt() {
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Say something"/>
           <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">Send</button>
+          <form onSubmit={e => submit(e)}>
+              <input className="form-control" placeholder="اكتب رسالتك هنا .." value={message}
+                     onChange={e => setMessage(e.target.value)}
+              />
+          </form>
           </span>
         </div>
       </form>
