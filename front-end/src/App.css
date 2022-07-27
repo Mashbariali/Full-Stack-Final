@@ -119,7 +119,7 @@ html {
     display: flex;
     flex-direction: column;
     width: 30%;
-    border: 0.1px solid darkslategrey !important;
+    /* border: 0.1px solid darkslategrey !important; */
     padding:19px;
     /* border-radius: 9px 60px; */
     text-shadow: #76838f !important;
