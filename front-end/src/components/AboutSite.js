@@ -25,10 +25,12 @@ function AboutSite() {
         <br></br>
         <br></br>
         {/* Card Bootstrap  */}
-        <div className='container' >
+        <div className='container text-dark' >
       { !isLogin &&
       <>
+      <center>
       <h1>لماذا أصبح عميل؟</h1>
+      </center>
         <hr></hr>
         <div class="card-group m-1">
   <div class="card m-1 border border-light">
