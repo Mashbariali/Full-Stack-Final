@@ -129,7 +129,7 @@ function AboutSite() {
   
      <div class="card-body animate__animated animate__bounce">
        <h5 class="card-title">كيف اثق في المندوب؟</h5>
-       <p class="card-text">تقدر تشوف معلومات المندوب وتقيماته</p>
+       <p class="card-text">تقدر تشوف معلومات المندوب وتقييماته</p>
      </div>
    </div>
    

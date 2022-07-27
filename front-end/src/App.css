@@ -8,7 +8,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Tajawal', sans-serif !important;
-  color: whitesmoke !important ;
  
 
 }
@@ -120,7 +119,7 @@ html {
     display: flex;
     flex-direction: column;
     width: 30%;
-    /* border: 0.1px solid darkslategrey !important; */
+    border: 0.1px solid darkslategrey !important;
     padding:19px;
     /* border-radius: 9px 60px; */
     text-shadow: #76838f !important;
@@ -303,9 +302,3 @@ min-height: 500px;
   margin: 8px;
   color:rgb(13, 19, 19)
 }
-
-
-/* .icon{
- height: 220px;
- width: 100px;
-} */
