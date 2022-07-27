@@ -16,30 +16,34 @@ function ListOrders() {
       setOrders(res.data)
     })
   })
-  return (
-  // 
-  orders.map((item)=>(
-    // <li>{e.title}</li>
-    <div className=' col d-flex justify-content-center'>
+  // return (
+  // orders.map((item)=>(
+  //   <div className=' col d-flex justify-content-center'>
     
 
-    <Card className="text-center">
-      <Card.Header>Featured</Card.Header>
-      <Card.Body>
-        <Card.Title>{item.PackageType}</Card.Title>
-        <Card.Text>
-        </Card.Text>
-        <Button variant="primary" href='/chatt'>Accept</Button>
-      </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
-    </Card>
-  </div>
-  ))
-
-  // 
-  
+  //   <Card className="text-center">
+  //     <Card.Header>Featured</Card.Header>
+  //     <Card.Body>
+  //       <Card.Title>{item.FromWhichCity} <p className='inline'>الى</p> {item.ToWhichCity}</Card.Title>
+  //       <Card.Text>
+  //         <p>
+  //         الحجم: {PackageType}
+  //         </p>
+  //         <p>
+  //         المدة: {DeliveryTime}
+  //         </p>
+  //         <p>
+  //         ملاحظات: {Description}
+  //         </p>
+  //       </Card.Text>
+  //       <Button variant="primary" href='/chatt'>قبول الطلب</Button>
+  //     </Card.Body>
+  //     <Card.Footer className="text-muted">تاريخ الطلب</Card.Footer>
+  //   </Card>
+  // </div>
+  // ))
  
-  )
+  // )
 }
 
 export default ListOrders
