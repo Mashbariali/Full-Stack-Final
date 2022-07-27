@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import AlertPasswordMatch from './AlertPasswordMatch'
+import AlertIncorrectInfo from './AlertIncorrectInfo'
 
 function Register() {
   const [first_name, setFirstName] = useState("")
@@ -11,6 +12,7 @@ function Register() {
   const [rePassword, setRePassword] = useState("")
   const [email, setEmail] = useState("")
   const [passwordIsMatched, setPasswordIsMatched] = useState();
+  const [incorrectInfo, setIncorrectInfo] = useState(false);
   const navigate = useNavigate("")
 
 
@@ -56,6 +58,10 @@ const RegisterUser = () => {
       console.log(first_name, last_name, username, password, email)
       navigate("/");
     })
+    .catch((err) => {
+      console.log(err);
+      setIncorrectInfo(true)
+    });
  
   }
 
@@ -65,6 +71,9 @@ const RegisterUser = () => {
         <h1 className="text-center py-5 mc-5 ">إنشاء حساب جديد</h1>
         {passwordIsMatched &&
           < AlertPasswordMatch />
+        }
+        {incorrectInfo &&
+          <AlertIncorrectInfo  />
         }
         <input className="form-control mt-3 mb-2" type="text" placeholder='الاسم الاول' onChange={(e)=> {setFirstName(e.target.value);}}></input>
         <input className="form-control mt-3 mb-2" type="text" placeholder='الاسم الاخير' onChange={(e)=> {setLastName(e.target.value);}}></input>

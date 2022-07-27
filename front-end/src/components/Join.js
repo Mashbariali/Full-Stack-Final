@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import AlertIncorrectInfo from './AlertIncorrectInfo'
+
 function Join() {
     const [name, setName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState("")
@@ -9,6 +11,10 @@ function Join() {
     const [carInfo, setCarInfo] = useState("")
     const [carImage, setCarImage] = useState("")
     const [DrivingLicense, setDrivingLicense] = useState("")
+    const [incorrectInfo, setIncorrectInfo] = useState(false);
+
+
+    
     const navigate = useNavigate("")
 
 
@@ -21,6 +27,10 @@ const join=() =>{
     alert('Successfully Login');
     navigate("/")
   })
+  .catch((err) => {
+    console.log(err);
+    setIncorrectInfo(true)
+  });
 
 
 }

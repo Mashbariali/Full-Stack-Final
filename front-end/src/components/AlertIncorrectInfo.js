@@ -2,7 +2,7 @@ import React from 'react';
 import Alert from 'react-bootstrap/Alert';
 import {useState} from 'react'
 
-function AlertUncorrectInfo() {
+function AlertIncorrectInfo() {
   const [show, setShow] = useState(true);
 
     if (show) {
@@ -14,5 +14,5 @@ function AlertUncorrectInfo() {
     );
   }
 }
-  export default AlertUncorrectInfo
+  export default AlertIncorrectInfo
 
