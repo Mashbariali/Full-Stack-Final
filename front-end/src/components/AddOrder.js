@@ -50,7 +50,7 @@ function AddOrder() {
         <option value="غير محدد">قم بالإختيار</option>
         <option value="0-5h">من 0-5 ساعة</option>
         <option value="6-12h">من 6-12 ساعة</option>
-        <option value="+12">اكثر من 12 ساعة</option>
+        <option value="+12h">اكثر من 12 ساعة</option>
       </Form.Select>
 
       <label >من مدينة:</label>
