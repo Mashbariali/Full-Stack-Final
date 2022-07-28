@@ -24,6 +24,7 @@ const Rating=() =>{
 }
 
   return (
+    
     <div>
          <div className='container d-flex justify-content-center align-items-center'>
       <div className="col-md-6 mx-auto d-flex flex-column ">
