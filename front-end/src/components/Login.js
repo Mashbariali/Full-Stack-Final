@@ -14,7 +14,6 @@ function Login() {
     
 
 
-
   const loginUser = () => {
     axios
       .post(`https://wasllha2022-django.herokuapp.com/Users/login`, {
@@ -27,6 +26,7 @@ function Login() {
           alert("logged successfully!");
           setLogiedSucc(true)
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("username", username)
           navigate("/");
           window.location.reload()
         }

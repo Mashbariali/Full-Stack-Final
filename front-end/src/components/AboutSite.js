@@ -80,10 +80,10 @@ function AboutSite() {
     <div className='container cardGroup border border-light '>
     <h1 class="text-center ">لماذا أصبح مندوب؟</h1>
         
-        <div class="card-group m-1">
-  <div class="card m-1 border border-light">
+        <div class="card-group m-1 ">
+  <div class="card m-1 border border-light container">
     <img src="https://drive.careem.com/assets/images/landing/be_own_boss_icn.svg" class="card-img-top" alt="..."/>
-    <div class="card-body animate__animated animate__bounce">
+    <div class="card-body animate__animated animate__bounce ">
       <h5 class="card-title">الاستقلالية</h5>
       <p class="card-text">أعمل وقت مايناسبك في المكان اللي يناسبك</p>
     </div>
