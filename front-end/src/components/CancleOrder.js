@@ -10,17 +10,13 @@ function CancelOrder() {
 
     const token =localStorage.getItem("token")
 
-    const DeleteOrder=() =>{
-      // axios.delete (' https://wasllha2022-django.herokuapp.com/Delivery/????????????/${id}', {
-      
-      // },{headers: { 'Authorization': `Bearer ${token}`}})
-      // .then(res=>{
+    const CancelOrderFunction=() =>{
         alert('تم الغاء الطلب');
         navigate("/")
-      // })
+      }
     
     
-    }
+    
 
   return (
     <div>
@@ -33,7 +29,7 @@ function CancelOrder() {
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
-           <button className="btn btn-primary mt-3" onClick={DeleteOrder} >مشاركة التقييم</button>
+           <button className="btn btn-primary mt-3" onClick={CancelOrderFunction} >مشاركة التقييم</button>
         </div>
       </div>
     </div>

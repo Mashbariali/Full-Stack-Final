@@ -38,7 +38,7 @@ export default function Footer() {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2022 تحت التعديل....
+        © 2022 وصلها
 
       </div>
     </MDBFooter>

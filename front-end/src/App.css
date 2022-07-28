@@ -160,13 +160,6 @@ html {
   width: 100%
 }
 
-.cardGroup{
-  color: rgb(24, 22, 22);
-}
-.card-group img{
-  width: 35%;
-  height: 35%;
-}
 
 .text-white{
   color: white !important
@@ -279,26 +272,18 @@ a:hover{
 .carousel-img{
   background-size: cover !important;
 }
-.carouselText{
-  position: absolute;
-  color: #1b3131;
-  top: 40px;
-  right: 50px;
-  display: flex;
-  flex-direction: row;
-  width: 30%;
-  border: 3px solid darkslategrey !important;
-  padding:9px;
-  border-radius: 9px 60px;
-  text-shadow: #76838f !important;
-  opacity: 0.6 !important;
 
-}
 
 .scrollarea {
 min-height: 500px;
 }
-.card_order{
-  margin: 8px;
-  color:rgb(13, 19, 19)
+
+
+.card {
+  padding: 1%; 
+
+}
+.cardimage{
+height: 150px;
+width: 125px;
 }
