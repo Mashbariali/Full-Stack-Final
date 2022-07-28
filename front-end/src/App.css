@@ -355,6 +355,18 @@ min-height: 500px;
 .btnRegister:hover{
   background-color: rgba(94, 6, 6, 0.623) !important;
 }
+.cardimage{
+height: 150px;
+width: 125px;
+}
+
+ /* Reaponsive for Home pge */
+
+ @media(max-height: 500px) {
+  .Navbar {
+  max-width: 100%;
+  }
+ }
 .container .footer{
   background-color:  rgba(139, 0, 0, 0.536) !important;
 }
