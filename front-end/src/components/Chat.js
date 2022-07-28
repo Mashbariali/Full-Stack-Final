@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import Pusher from "pusher-js";
+import { Container } from "react-bootstrap";
 function Chat() {
 
   const [username, setUsername] = useState(localStorage.getItem("username"));
@@ -37,7 +38,7 @@ function Chat() {
   }
 
   return (
-
+    <Container className="Chat-App">
       <div className="col-md-6 mx-auto d-flex flex-column mt-5 chattApp animate__animated animate__backInDown">
           <div className="d-flex flex-column align-items-stretch flex-shrink-0 bg-white">
               <div
@@ -68,6 +69,7 @@ function Chat() {
           <a href='/cancelOrder' className='text-center mb-5'>الغاء الطلب</a>
 
       </div>
+      </Container>
   );
 }
 
