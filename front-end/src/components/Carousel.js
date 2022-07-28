@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react';
+import Car from '../images/Car.gif'
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -57,7 +58,7 @@ export default function Carousel() {
             
               </div>
 }
-          <MDBCarouselElement className='carousel-img' src='https://cdn.dribbble.com/users/187444/screenshots/2928490/dribbble.gif' alt='...' />
+          <MDBCarouselElement className='carousel-img' src={Car} alt='...' />
           
         </MDBCarouselItem>
       </MDBCarouselInner>
