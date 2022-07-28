@@ -393,3 +393,16 @@ width: 125px;
 
 
 
+.btnReport{
+  background-color: rgba(139, 0, 0, 0.536) !important;
+  border: 1px solid rgba(139, 0, 0, 0.536) !important; 
+}
+.btnReport:hover{
+  background-color: rgba(139, 0, 0, 0.536) !important;
+}
+.btnlogindeliveryNow{
+  background-color: whitesmoke !important;
+}
+.btnlogindeliveryNow:hover{
+  background-color: whitesmoke !important; 
+}

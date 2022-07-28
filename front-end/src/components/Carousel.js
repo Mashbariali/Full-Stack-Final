@@ -53,7 +53,7 @@ export default function Carousel() {
               <label>وصلها اسهل</label>
             
               <br></br>
-              <button className="btn btn-danger m-1 dbutton ">سجل الان</button>
+             <a class='btnlogindeliveryNow' href='/login'> <button className="btn btn-danger m-1 dbutton ">سجل الان</button> </a>
 
             
               </div>

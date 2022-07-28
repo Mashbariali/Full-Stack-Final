@@ -13,14 +13,14 @@ function AboutSite() {
     }
   
 
-}, [isLogin])
+}, [isLogin] )
 
   return (
     <div>
 
-        <div data-aos="fade-up">
+        {/* <div data-aos="fade-up">
             <h1>hi ithere</h1>
-        </div>
+        </div> */}
         <br></br>
         <br></br>
         <br></br>
