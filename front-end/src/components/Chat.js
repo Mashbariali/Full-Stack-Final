@@ -1,13 +1,22 @@
 import {useEffect, useState} from "react";
 import Pusher from "pusher-js";
 import { Container } from "react-bootstrap";
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 function Chat() {
 
     const [username, setUsername] = useState(localStorage.getItem("username"));
       const [messages, setMessages] = useState([]);
+      const token =localStorage.getItem("token")
+      const navigate = useNavigate("")
+     
   const [message, setMessage] = useState('');
   let allMessages = [];
 
+//   const setUpData = (e)=>{
+//     let {id } = e
+//     localStorage.setItem("id" , id)
+//   }
   useEffect(() => {
       Pusher.logToConsole = true;
 
@@ -36,6 +45,16 @@ function Chat() {
 
       setMessage('');
   }
+//   const onDelete=(id)=>{
+//     axios.delete(`https://wasllha2022-django.herokuapp.com/Delivery/delete_Order${id}`,{
+    
+//     },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+//     }).then(res=>{
+      
+//       navigate("/addRating")
+
+// })
+//   }
 
   return (
     <Container className="Chat-App">
@@ -64,7 +83,7 @@ function Chat() {
               />
           </form>
 
-          <a href='/addRating' className='text-center mt-5'>إنهاء الطلب</a>
+          <a href='/addRating' className='text-center mt-5'>اكمال الطلب</a>
           <a href='/cancelOrder' className='text-center mb-5'>الغاء الطلب</a>
 
       </div>
@@ -73,4 +92,3 @@ function Chat() {
 }
 
 export default Chat
-    
