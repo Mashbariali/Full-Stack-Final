@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <div className='container '>
     <div class='footerr mt-5'>
-    <MDBFooter className='footer bg-dark text-center text-white'>
+    <MDBFooter className='footer bg-danger text-center text-white ' >
       <MDBContainer className='p-4 pb-0'>
         <section className='mb-4'>
           <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>

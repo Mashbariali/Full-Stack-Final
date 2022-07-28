@@ -15,6 +15,6 @@ urlpatterns=[
     path("delete_AppRating/<AppRating_id>", views.delete_AppRating, name="delete_AppRating"),
     path("add_DelegateRating", views.add_DelegateRating, name="add_DelegateRating"),
     path("delete_DelegateRating/<DelegateRating_id>", views.delete_DelegateRating, name="delete_DelegateRating"),
-
+    path("Cancelling_Order", views.Cancelling_Order, name="Cancelling_Order"),
 ]
 

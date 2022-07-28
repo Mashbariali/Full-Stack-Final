@@ -66,7 +66,9 @@ const RegisterUser = () => {
   }
 
   return (
-    <div className='container d-flex justify-content-center align-items-center'>
+    <>
+    <center>
+    <div className='container d-flex justify-content-center align-items-center registerApp animate__animated animate__fadeIn'>
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">إنشاء حساب جديد</h1>
         {passwordIsMatched &&
@@ -83,10 +85,14 @@ const RegisterUser = () => {
         <input className="form-control mt-3 mb-2" type="password" placeholder='اعد كتابة كلمة المرور' onChange={(e)=> {setRePassword(e.target.value);}}></input>
 
 
-        <button className="btn btn-primary mt-2" onClick={checkMatchPassword}>انشاء الحساب </button>
+        {/* <button className="btn btn-primary mt-2" onClick={checkMatchPassword}>انشاء الحساب </button> */}
 
     </div>
+
     </div>
+        <button className="btn btn-primary mt-2 btnRegister" onClick={checkMatchPassword}>انشاء الحساب </button>
+        </center>
+        </>
   )
 }
 
