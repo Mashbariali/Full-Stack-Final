@@ -31,8 +31,16 @@ function CancelOrder() {
       <div className="col-md-6 mx-auto d-flex flex-column ">
         <h1 className="text-center py-5 mc-5 ">رأيك يهمنا</h1>
         <h3 className="text-center py-5 mc-5 ">ماسبب الغاء الطلب؟</h3>
+        
 
         <label >السبب</label>
+        <Form.Select size="sm" onChange={(e) => setCancel(e.target.value)}>
+        <option value="غير محدد">قم بالاختيار</option>
+        <option value="السعر غير مناسب">السعر غير</option>
+        <option value="المندوب غير مناسب">المندوب غير مناسب</option>
+        <option value="غير ذلك">غير ذلك</option>
+
+      </Form.Select>
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
