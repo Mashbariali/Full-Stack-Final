@@ -40,36 +40,60 @@ console.log(token);
   
   },[]);
   return (
-    data.map((item)=>(
-    <div className=''>
-    
-      <Row> 
-        <Col xs={6} md={4}>
-    <Card className="text-center">
-      <Card.Header><img src={ordericon} className="cardimage" /></Card.Header>
-      <Card.Body>
-        <Card.Title>من {item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
+    <div className='card-group1 mt-5'>
+  {data.map((item)=>(
+   <>
+     <Card className="text-center ">
+       <Card.Header ><img src={ordericon} className="cardimage" /></Card.Header>
+       <Card.Body>
+         <Card.Title>من {item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
         <Card.Text className='cardtext'>
           <p>
           الحجم: {item.PackageType}
           </p>
-          <p>
+         <p>
           المدة: {item.DeliveryTime}
           </p>
           <p>
           ملاحظات: {item.Description}
-          </p>
+       </p>
         </Card.Text>
-        <Button variant="primary" href='/chat'>قبول الطلب</Button>
+         <Button variant="primary" href='/chat'>قبول الطلب</Button>
       </Card.Body>
       <Card.Footer className="text-muted">تاريخ الطلب: {item.date.slice(0,10)} {item.date.slice(12,16)}</Card.Footer>
     </Card>
-    </Col>
-    </Row>
-  </div>
-  ))
- 
-  )
+   </>
+  ))}
+   
+    </div>
+
+  //   data.map((item)=>(
+    
+  //       <Col xs={6} md={4}  >
+  //   <Card className="text-center card-group">
+  //     <Card.Header className='card-group'><img src={ordericon} className="cardimage" /></Card.Header>
+  //     <Card.Body>
+  //       <Card.Title>من {item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
+  //       <Card.Text className='cardtext'>
+  //         <p>
+  //         الحجم: {item.PackageType}
+  //         </p>
+  //         <p>
+  //         المدة: {item.DeliveryTime}
+  //         </p>
+  //         <p>
+  //         ملاحظات: {item.Description}
+  //         </p>
+  //       </Card.Text>
+  //       <Button variant="primary" href='/chat'>قبول الطلب</Button>
+  //     </Card.Body>
+  //     <Card.Footer className="text-muted">تاريخ الطلب: {item.date.slice(0,10)} {item.date.slice(12,16)}</Card.Footer>
+  //   </Card>
+  //   </Col>
+  
+  // ))
+
+    )
 }
 
 export default ListOrders

@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import Pusher from "pusher-js";
 function Chat() {
 
-  const [username, setUsername] = useState(localStorage.getItem("username"));
-  const [messages, setMessages] = useState([]);
+    const [username, setUsername] = useState(localStorage.getItem("username"));
+      const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
   let allMessages = [];
 
@@ -50,8 +50,7 @@ function Chat() {
                       return (
                           <div className="list-group-item list-group-item-action py-3 lh-tight">
                               <div className="d-flex w-100 align-items-center justify-content-between">
-                                  <strong className="mb-1">{localStorage.getItem("username")}</strong>
-                              </div>
+                              <strong className="mb-1">{message.username}</strong>                              </div>
                               <div className="col-10 mb-1 small">{message.message}</div>
                           </div>
                       )
