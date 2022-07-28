@@ -24,8 +24,10 @@ function Login() {
       .then((res) => {
         
         if (res.status === 200) {
+          alert("logged successfully!");
           setLogiedSucc(true)
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("username", username)
           navigate("/");
           window.location.reload()
         }

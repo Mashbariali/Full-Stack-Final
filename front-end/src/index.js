@@ -9,6 +9,7 @@ import 'animate.css';
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     

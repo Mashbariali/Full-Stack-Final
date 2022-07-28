@@ -8,7 +8,6 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Tajawal', sans-serif !important;
-  color: whitesmoke !important ;
  
 
 }
@@ -360,3 +359,17 @@ min-height: 500px;
 .container .footer{
   background-color:  rgba(139, 0, 0, 0.536) !important;
 }
+/* =======
+/* .cardimage{
+
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  height: 100px;
+}
+
+.cardtext {
+
+  text-align: center;
+  font-size: 100%;
+} */
