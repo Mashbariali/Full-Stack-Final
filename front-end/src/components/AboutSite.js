@@ -100,8 +100,8 @@ function AboutSite() {
   <div class="card m-1 border border-light">
     <img src="https://drive.careem.com/assets/images/landing/control_life_icn.svg" class="card-img-top" alt="..."/>
     <div class="card-body animate__animated animate__bounce">
-      <h5 class="card-title">تحكم بحياتك </h5>
-      <p class="card-text">كن مسؤولاً عن عملك وحقق أهدافك بشروطك</p>
+      <h5 class="card-title">النسبة</h5>
+      <p class="card-text">نسبة وصلها 3% من قيمة توصيل الطلب</p>
     </div>
   </div>
 </div>
