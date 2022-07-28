@@ -38,22 +38,20 @@ export default function Carousel() {
               <label>وصلها اسهل</label>
             
               <br></br>
-              <button className="btn btn-danger m-1 dbutton ">سجل الان</button>
+            <a href='/login' className='btnlogindeliveryNow'>  <button className="btn btn-danger m-1 dbutton ">سجل الان</button> </a>
 
             
               </div>
 }
 {isLogin &&
             <div className='carsouleLoginMessage animate__animated animate__backInLeft '>
-              <h4>ليه اشحن مع وصلها؟</h4>
+              <h4> مستعد تطلب الأن؟</h4>
               <br/>
               
-              <label>وصلها اسرع</label>
-              <label>وصلها اضمن</label>
-              <label>وصلها اسهل</label>
+              
             
               <br></br>
-             <a class='btnlogindeliveryNow' href='/login'> <button className="btn btn-danger m-1 dbutton ">سجل الان</button> </a>
+           <a className='btnlogindeliveryNow' href='AddOrder' ><button className="btn btn-danger m-1 dbutton ">طلب توصيل</button></a>
 
             
               </div>

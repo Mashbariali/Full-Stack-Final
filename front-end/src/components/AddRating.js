@@ -42,7 +42,7 @@ const Rating=() =>{
         <textarea rows="8"
               className="form-control w-100 mt-1" onChange={(e)=> {setDescription(e.target.value);}}
             ></textarea>
-           <button className="btn btn-primary mt-3" onClick={Rating} >مشاركة التقييم</button>
+           <button className="btn btn-primary mt-3 btnReport" onClick={Rating} >مشاركة التقييم</button>
         </div>
       </div>
     </div>
