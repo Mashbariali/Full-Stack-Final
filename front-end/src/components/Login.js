@@ -23,7 +23,7 @@ function Login() {
       .then((res) => {
         
         if (res.status === 200) {
-          alert("logged successfully!");
+          alert("تم تسجيل الدخول بنجاح!");
           setLogiedSucc(true)
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("username", username)

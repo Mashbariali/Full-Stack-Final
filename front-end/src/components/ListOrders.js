@@ -43,7 +43,7 @@ console.log(token);
     <div className='card-group1 mt-5'>
   {data.map((item)=>(
    <>
-     <Card className="text-center ">
+     <Card className="text-center mb-5">
        <Card.Header ><img src={ordericon} className="cardimage" /></Card.Header>
        <Card.Body>
          <Card.Title>من {item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
