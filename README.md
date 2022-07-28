@@ -1,3 +1,6 @@
+### Deployment Link:
+https://62e25d934d37206ee3090cac--graceful-salmiakki-87c328.netlify.app/
+
 ### Title:
 Delivery App
 
