@@ -259,6 +259,7 @@ def delete_DelegateRating(request: Request, DelegateRating_id):
 def Cancelling_Order(request: Request):
     if not request.user.is_authenticated: #or not request.user.has_perm('SecurityApp.add_scan_vul'):
         return Response({"msg": "Sorry, Not Allowed to Cancelling Order ..."}, status=status.HTTP_401_UNAUTHORIZED)
+    request.data.update(user=request.user.id)
 
     cancelling = CancellingOrderSerializer(data=request.data)
     if cancelling.is_valid():

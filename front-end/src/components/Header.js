@@ -52,8 +52,11 @@ function Header() {
           {/* <Nav><Link to="/join"className='me-2'>الانضمام</Link></Nav> */}
           {/* <Button className='userbuttom me-3 log1' a href='/register' variant="outline-info" >تسجيل </Button> */}
           {isLogin ? (
-            <Button className='userbuttom mr-3' a href='/' onClick={logout}>{localStorage.getItem("username")} تسجيل الخروج</Button>
-            
+            <>
+            <Button className='userbuttom mr-3' a href='/' onClick={logout}>تسجيل الخروج</Button>
+            <Nav.Link href="#" disabled>
+            مرحبا بك {localStorage.getItem("username")} 
+            </Nav.Link>            </>
           ) : (
             <Nav><Link to="/login"className='me-2'>تسجيل الدخول</Link></Nav>
             )}

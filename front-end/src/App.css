@@ -160,6 +160,14 @@ html {
   width: 100%
 }
 
+.cardGroup{
+  color: rgb(24, 22, 22);
+}
+.card-group img{
+  width: 35%;
+  height: 35%;
+}
+
 .text-white{
   color: white !important
 }
@@ -190,7 +198,7 @@ html {
 
 }
 .addOrder{
-  border: 3px solid rgba(233, 223, 223, 0.98) ;
+  border: 3px solid rgba(233, 223, 223, 0.98);
   padding: 1px !important;
   display: flex;
   /* margin: 19px !important; */
@@ -244,7 +252,6 @@ html {
   /* border: 1px solid rgb(136, 65, 65) !important; */
   /* background-color: rgb(48, 48, 48) !important; */
   background: rgba(139, 0, 0, 0.536) !important;
-  
 }
 
 .MyNav{
@@ -271,6 +278,21 @@ a:hover{
 .carousel-img{
   background-size: cover !important;
 }
+.carouselText{
+  position: absolute;
+  color: #1b3131;
+  top: 40px;
+  right: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  border: 3px solid darkslategrey !important;
+  padding:9px;
+  border-radius: 9px 60px;
+  text-shadow: #76838f !important;
+  opacity: 0.6 !important;
+
+}
 
 .scrollarea {
 min-height: 500px;
@@ -281,9 +303,58 @@ min-height: 500px;
 }
 
 
-.card {
-  padding: 1%; 
+/* chat and register and btnRegister Design footerBackground */
+.chattApp{
+   
+  
+  border: 3px solid rgba(233, 223, 223, 0.98);
+  padding: 1px !important;
+  display: flex;
+  /* margin: 19px !important; */
+  border-radius: 6px;
+  margin: 9px;
+  /* position: relative; */
+  top: 50% !important;
+  left: 50%;
 
+  flex-direction: column;
+  width: 45% !important;
+  left: 50% !important;
+  top: 50% !important;
+  font-size: 22px;
+  box-shadow: 2px 2px 2px rgba(149, 81, 81, 0.46), 4px 4px 6px rgba(149, 81, 81, 0.46)  !important;
+  padding: 2px;
+
+  
+
+  
+}
+.registerApp{
+  border: 3px solid rgba(233, 223, 223, 0.98);
+  padding: 1px !important;
+  display: flex;
+  /* margin: 19px !important; */
+  border-radius: 6px;
+  margin: 9px;
+  /* position: relative; */
+  top: 50% !important;
+  left: 50%;
+
+  flex-direction: column;
+  width: 45% !important;
+  left: 50% !important;
+  top: 50% !important;
+  font-size: 22px;
+  box-shadow: 2px 2px 2px rgba(149, 81, 81, 0.46), 4px 4px 6px rgba(149, 81, 81, 0.46)  !important;
+  padding: 2px;
+}
+.btnRegister{
+  width: 22%;
+  background-color:  rgba(139, 0, 0, 0.536) !important;
+  border: 1px solid #ccc !important;
+}
+.btnRegister:hover{
+  background-color: rgba(94, 6, 6, 0.623) !important;
 }
 .cardimage{
 height: 150px;
@@ -297,3 +368,20 @@ width: 125px;
   max-width: 100%;
   }
  }
+.container .footer{
+  background-color:  rgba(139, 0, 0, 0.536) !important;
+}
+/* =======
+/* .cardimage{
+
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  height: 100px;
+}
+
+.cardtext {
+
+  text-align: center;
+  font-size: 100%;
+} */

@@ -41,14 +41,15 @@ console.log(token);
   },[]);
   return (
     data.map((item)=>(
-    <div className='mt-5 col d-flex justify-content-center animate__animated animate__fadeIn'>
+    <div className=''>
     
-
+      <Row> 
+        <Col xs={6} md={4}>
     <Card className="text-center">
       <Card.Header><img src={ordericon} className="cardimage" /></Card.Header>
       <Card.Body>
-        <Card.Title>{item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
-        <Card.Text>
+        <Card.Title>من {item.FromWhichCity} <p className='d-inline ToWhere'>الى</p> {item.ToWhichCity}</Card.Title>
+        <Card.Text className='cardtext'>
           <p>
           الحجم: {item.PackageType}
           </p>
@@ -63,6 +64,8 @@ console.log(token);
       </Card.Body>
       <Card.Footer className="text-muted">تاريخ الطلب: {item.date.slice(0,10)} {item.date.slice(12,16)}</Card.Footer>
     </Card>
+    </Col>
+    </Row>
   </div>
   ))
  
