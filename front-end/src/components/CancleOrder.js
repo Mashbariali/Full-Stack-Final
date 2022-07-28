@@ -5,16 +5,23 @@ import Form from 'react-bootstrap/Form';
 
 function CancelOrder() {
 
-    const [Description, setDescription] = useState("")
+  const [Cancel, setCancel] = useState("")
+  const [Description, setDescription] = useState("")
     const navigate = useNavigate("")
 
     const token =localStorage.getItem("token")
 
     const CancelOrderFunction=() =>{
-        alert('تم الغاء الطلب');
-        navigate("/")
-      }
+    axios.post ('https://wasllha2022-django.herokuapp.com/Delivery/Cancelling_Order', {
+      Cancel, Description
+  },{headers: { 'Authorization': `Bearer ${token}`}}).then(res=>{
+  }).then(res=>{
     
+    navigate("/")
+  })
+  
+}
+ 
     
     
 
